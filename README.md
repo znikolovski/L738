@@ -1,5 +1,5 @@
 
-# Title
+# **Title**
 
 > The title needs to match the title listed on the Summit registration site for your lab.
 
