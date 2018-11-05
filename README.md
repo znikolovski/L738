@@ -50,10 +50,9 @@ Each lesson should have explanatory paragraphs that give the reader the informat
     * Password: *summit2019*
  2. Include figures to make instructions more clear. Make sure to include an italicized caption. 
 
-
-    ![Figure 1: Summit Logo](images/1_summit-logo.jpg)
-    
     *Figure 1: Summit Logo*
+    
+    ![Figure 1: Summit Logo](images/1_summit-logo.jpg)
 
 3. You can also include small code snippets with syntax highlighting. Try to use syntax highlighting whenever possible.
 
