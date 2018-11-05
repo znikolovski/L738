@@ -8,8 +8,8 @@
 > Break your lab up into lessons. Include each lesson in the table of contents. Table of contents should only list Heading 1s
 
 * [Lab Overview](#lab-overview)
-* [Lesson 1 - Brief Description](#lesson-1)
-* [Lesson 2 - Brief description](#)
+* [Lesson 1 - Brief Description](#lesson-1---brief-description)
+* [Lesson 2 - Brief description](#lesson-2---brief-description)
 * [Next Steps](#next-steps)
 * [Appendix](#appendix)
 
@@ -52,6 +52,7 @@ Each lesson should have explanatory paragraphs that give the reader the informat
 
 
     ![Figure 1: Summit Logo](images/1_summit-logo.jpg)
+    
     *Figure 1: Summit Logo*
 
 3. You can also include small code snippets with syntax highlighting. Try to use syntax highlighting whenever possible.
