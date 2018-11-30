@@ -4,14 +4,14 @@
 ## Table of Contents
 
 * [Lab Overview](#lab-overview) 10 minutes
-* [Lesson 1 - SPA Starter Kit](#lesson-1---brief-description) 10 minutes
-* [Lesson 2 - Hello World](#lesson-2---brief-description) 5 minutes
-* [Lesson 3 - WKND Events](#lesson-2---brief-description) 5 minutes
-* [Lesson 4 - JSON Contract](#lesson-2---brief-description) 5 minutes
-* [Lesson 5 - Front-end Development](#lesson-2---brief-description) 15 minutes
-* [Lesson 6 - Back-end Development](#lesson-2---brief-description) 10 minutes
-* [Lesson 7 - Navigation and Routing](#lesson-2---brief-description) 10 minutes (Discussion, no coding)
-* [Lesson 8 - Server Side Rendering](#lesson-2---brief-description) 10 minutes
+* [Lesson 1 - SPA Starter Kit](#lesson-1---spa-starter-kit) 10 minutes
+* [Lesson 2 - Hello World](#lesson-2---hello-world) 5 minutes
+* [Lesson 3 - WKND Events](#lesson-3---wknd-events-app) 5 minutes
+* [Lesson 4 - JSON Contract](#lesson-4---json-contract) 5 minutes
+* [Lesson 5 - Front-end Development](#lesson-5---front-end-development) 15 minutes
+* [Lesson 6 - Back-end Development](#lesson-6---back-end-development) 10 minutes
+* [Lesson 7 - Navigation and Routing](#lesson-7---navigation-and-routing) 10 minutes (Discussion, no coding)
+* [Lesson 8 - Server Side Rendering](#lesson-8---server-side-rendering) 10 minutes
 * [Next Steps](#next-steps)
 * [Appendix](#appendix)
 
@@ -46,6 +46,8 @@ The lab overview should give the attendee a general idea of what this lab is foc
 
 ## Lesson 1 - SPA Starter Kit 
 
+> Danny
+
 ### Objective
 
 1. Objective should clearly state the goal of the lesson.
@@ -57,6 +59,8 @@ The lab overview should give the attendee a general idea of what this lab is foc
 > TODO
 
 ## Lesson 2 - Hello World
+
+> Danny
 
 ### Objective
 
@@ -70,6 +74,8 @@ The lab overview should give the attendee a general idea of what this lab is foc
 
 ## Lesson 3 - WKND Events App
 
+> Danny
+
 ### Objective
 
 1. TODO
@@ -81,6 +87,8 @@ The lab overview should give the attendee a general idea of what this lab is foc
 #### Exercise 3.1
 
 ## Lesson 4 - JSON Contract
+
+> Danny
 
 ### Objective
 
@@ -98,6 +106,8 @@ The lab overview should give the attendee a general idea of what this lab is foc
 
 ## Lesson 5 - Front-end Development
 
+> Patrick
+
 ### Objective
 
 1. TODO
@@ -109,6 +119,8 @@ The lab overview should give the attendee a general idea of what this lab is foc
 #### Exercise 5.1
 
 ## Lesson 6 - Back-end Development
+
+> Patrick
 
 ### Objective
 
@@ -122,6 +134,8 @@ The lab overview should give the attendee a general idea of what this lab is foc
 
 ## Lesson 7 - Navigation and Routing
 
+> Patrick
+
 ### Objective
 
 1. TODO
@@ -133,6 +147,8 @@ The lab overview should give the attendee a general idea of what this lab is foc
 #### Exercise 7.1
 
 ## Lesson 8 - Server Side Rendering
+
+> Patrick
 
 ### Objective
 
