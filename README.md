@@ -10,10 +10,12 @@
 * [Lesson 4 - JSON Contract](#lesson-2---brief-description) 5 minutes
 * [Lesson 5 - Front-end Development](#lesson-2---brief-description) 15 minutes
 * [Lesson 6 - Back-end Development](#lesson-2---brief-description) 10 minutes
-* [Lesson 7 - Navigation and Routing](#lesson-2---brief-description) 10 minutes
-* [Lesson 8 - SSR Optimizations](#lesson-2---brief-description) 10 minutes
+* [Lesson 7 - Navigation and Routing](#lesson-2---brief-description) 10 minutes (Discussion, no coding)
+* [Lesson 8 - Server Side Rendering](#lesson-2---brief-description) 10 minutes
 * [Next Steps](#next-steps)
 * [Appendix](#appendix)
+
+
 
 ## Lab Overview
 
@@ -31,7 +33,18 @@ The lab overview should give the attendee a general idea of what this lab is foc
 * List any provisioning requirements that need to be completed prior to beginning this lab
 * List any third party software or environments that may be needed to complete this lab
 
-## Lesson 1 - Brief Description
+### Lab Machine Environment
+
+* AEM author instance
+* Maven - version?
+* NPM - version?
+* Node - version?
+* Angular CLI - version?
+* Visual Studio Code
+* Eclipse with AEM dev tools
+* Mac OS
+
+## Lesson 1 - SPA Starter Kit 
 
 ### Objective
 
@@ -41,61 +54,103 @@ The lab overview should give the attendee a general idea of what this lab is foc
 
 ### Lesson Context
 
-Each lesson should have explanatory paragraphs that give the reader the information they need about that lesson. You can think of these paragraphs as you talk track that you would use during the presentation. The goal is to give the reader the information they need to understand and complete the lab with or without your physical presence.
+> TODO
 
-#### Exercise 1.1
-
-Each exercise should accomplish a major milestone rather than a simple click. You can use screenshots, numbered lists, click paths, and supporting paragraphs to guide the reader through your exercise.
-
-1. Login to your lab machine with the following credentials
-  
-    * Username: [Lab number]
-    * Password: *summit2019*
-  
-1. Include figures to make instructions more clear. Make sure to include an italicized caption.
-
-    *Figure 1: Summit Logo*
-
-    ![Figure 1: Summit Logo](images/1_summit-logo.jpg)
-
-1. You can also include small code snippets with syntax highlighting. Try to use syntax highlighting whenever possible.
-
-   ```js
-   // Here is a short code snippet
-   console.log("Hello World!");
-   ```
-
-1. For larger code blocks it is preferable to store the entire file in the supporting *resources* folder and simply link to it:
-
-   Copy [sample.js](resources/sample.js) in to your project's directory
-
-1. Make sure all code is well-commented and explained
-
-#### Exercise 1.2
-
-Notes should be used throughout your lab manual to point out tips, tricks, and gotchas to the user. You might include alternative methods, future reference guidance, off topic, or outside lab scope scenarios in notes.
-
-> Pro Tip! You can use the `>` in your MD file to create a quote block.
-
-Tables are also quite useful:
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
-
-## Lesson 2 - Brief Description
+## Lesson 2 - Hello World
 
 ### Objective
 
+1. TODO
+
 ### Lesson Context
+
+> TODO
 
 #### Exercise 2.1
 
-#### Exercise 2.2
+## Lesson 3 - WKND Events App
 
-#### Exercise 2.3
+### Objective
+
+1. TODO
+
+### Lesson Context
+
+> TODO
+
+#### Exercise 3.1
+
+## Lesson 4 - JSON Contract
+
+### Objective
+
+1. JSON Structure
+2. Front-end and back-end agree
+3. factor in Authoring
+    * :type
+4. SDK -> provides access to model to adapt to use cases -> MapTo
+
+### Lesson Context
+
+> TODO
+
+#### Exercise 4.1
+
+## Lesson 5 - Front-end Development
+
+### Objective
+
+1. TODO
+
+### Lesson Context
+
+> TODO
+
+#### Exercise 5.1
+
+## Lesson 6 - Back-end Development
+
+### Objective
+
+1. TODO
+
+### Lesson Context
+
+> TODO
+
+#### Exercise 6.1
+
+## Lesson 7 - Navigation and Routing
+
+### Objective
+
+1. TODO
+
+### Lesson Context
+
+> TODO
+
+#### Exercise 7.1
+
+## Lesson 8 - Server Side Rendering
+
+### Objective
+
+1. What is Server Side Rendering or SSR?
+2. Why use Server Side Rendering?
+3. Understand two approaches for using SSR with AEM SPA Editor 
+
+
+### Lesson Context
+
+> TODO 
+
+1. Two approaches
+    1. external Node server serves the app and consumes content from AEM headless
+    2. AEM instance and an OSGi service in the middle POSTs the model to the Node Instance and injects it into the HTML of the AEM Page
+2. ideally spin local Node instance and connect AEM simulate SSR
+
+#### Exercise 8.1
 
 ## Next Steps
 
