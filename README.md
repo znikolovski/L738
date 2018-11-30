@@ -1,15 +1,17 @@
 
-# Title
-
-> The title needs to match the title listed on the Summit registration site for your lab.
+# L738 - No Author Left Behind - Develop SPAs That Are Fast, Engaging, and Editable
 
 ## Table of Contents
 
-> Break your lab up into lessons. Include each lesson in the table of contents. Table of contents should only list Heading 2s (`##` in markdown)
-
-* [Lab Overview](#lab-overview)
-* [Lesson 1 - Brief Description](#lesson-1---brief-description)
-* [Lesson 2 - Brief Description](#lesson-2---brief-description)
+* [Lab Overview](#lab-overview) 10 minutes
+* [Lesson 1 - SPA Starter Kit](#lesson-1---brief-description) 10 minutes
+* [Lesson 2 - Hello World](#lesson-2---brief-description) 5 minutes
+* [Lesson 3 - WKND Events](#lesson-2---brief-description) 5 minutes
+* [Lesson 4 - JSON Contract](#lesson-2---brief-description) 5 minutes
+* [Lesson 5 - Front-end Development](#lesson-2---brief-description) 15 minutes
+* [Lesson 6 - Back-end Development](#lesson-2---brief-description) 10 minutes
+* [Lesson 7 - Navigation and Routing](#lesson-2---brief-description) 10 minutes
+* [Lesson 8 - SSR Optimizations](#lesson-2---brief-description) 10 minutes
 * [Next Steps](#next-steps)
 * [Appendix](#appendix)
 
