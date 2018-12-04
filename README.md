@@ -110,11 +110,19 @@ The lab overview should give the attendee a general idea of what this lab is foc
 
 ### Objective
 
-1. TODO
+1. Observe how frontend components map to AEM resources
+2. Hear about how the data structure served by AEM is provided as component properties
+3. Learn how to drive the content author experience
+4. Better understand the role played by the ModelManager
+5. Get an overview of the main components provided by the SDK
 
 ### Lesson Context
 
-> TODO
+> The goal of the chapter is to experiment how editable frontend components are written. The chapter will go through topics such as 
+
+* The consumption of AEM data
+* The notion of library of components and dynamic instantiation
+* How to pilot the authoring experience
 
 #### Exercise 5.1
 
@@ -124,7 +132,8 @@ The lab overview should give the attendee a general idea of what this lab is foc
 
 ### Objective
 
-1. TODO
+1. What is the role played by the Sling Models?
+3. What are the interfaces expected by the frontend libraries?
 
 ### Lesson Context
 
@@ -138,7 +147,8 @@ The lab overview should give the attendee a general idea of what this lab is foc
 
 ### Objective
 
-1. TODO
+1. See the relationship between the App routing and the ModelRouter
+2. The multiple degrees of authorability: Dynamicity for portability and reusiablity
 
 ### Lesson Context
 
@@ -152,9 +162,9 @@ The lab overview should give the attendee a general idea of what this lab is foc
 
 ### Objective
 
-1. What is Server Side Rendering or SSR?
+1. What is Server Side Rendering?
 2. Why use Server Side Rendering?
-3. Understand two approaches for using SSR with AEM SPA Editor 
+3. Understand the two candidate SSR architectures and their trade-off
 
 
 ### Lesson Context
