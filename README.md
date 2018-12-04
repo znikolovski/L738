@@ -118,10 +118,12 @@ The lab overview should give the attendee a general idea of what this lab is foc
 
 ### Lesson Context
 
-> The goal of the chapter is to experiment how editable frontend components are written. The chapter will go through topics such as 
+> The lesson illustrates how editable frontend components are developed. The chapter will go through topics such as 
 
 * The consumption of AEM data
-* The notion of library of components and dynamic instantiation
+* The notion of library of components
+* The goods of delegating of the content structure
+* The dynamic instantiation of components
 * How to pilot the authoring experience
 
 #### Exercise 5.1
@@ -137,7 +139,7 @@ The lab overview should give the attendee a general idea of what this lab is foc
 
 ### Lesson Context
 
-> TODO
+> The lesson covers all the details about how raw data is processed and served to the frontend libraries.
 
 #### Exercise 6.1
 
@@ -152,7 +154,7 @@ The lab overview should give the attendee a general idea of what this lab is foc
 
 ### Lesson Context
 
-> TODO
+> The lesson exposes the relationship between the App routing and the ModelRouter, the notion of asynchronous model and the ModelRouter configuration. It also lists the multiple degrees of "authorability" and trade-off.
 
 #### Exercise 7.1
 
@@ -164,17 +166,12 @@ The lab overview should give the attendee a general idea of what this lab is foc
 
 1. What is Server Side Rendering?
 2. Why use Server Side Rendering?
-3. Understand the two candidate SSR architectures and their trade-off
+3. Understand the two main SSR architectures and their trade-off
 
 
 ### Lesson Context
 
-> TODO 
-
-1. Two approaches
-    1. external Node server serves the app and consumes content from AEM headless
-    2. AEM instance and an OSGi service in the middle POSTs the model to the Node Instance and injects it into the HTML of the AEM Page
-2. ideally spin local Node instance and connect AEM simulate SSR
+> The lesson presents two architectures where either an AEM or a Node instance serves the content and what are the implications of each architecture.
 
 #### Exercise 8.1
 
