@@ -4,14 +4,14 @@
 ## Table of Contents
 
 * [Lab Overview](#lab-overview) 10 minutes
-* [Lesson 1 - SPA Starter Kit](#lesson-1---brief-description) 10 minutes
-* [Lesson 2 - Hello World](#lesson-2---brief-description) 5 minutes
-* [Lesson 3 - WKND Events](#lesson-2---brief-description) 5 minutes
-* [Lesson 4 - JSON Contract](#lesson-2---brief-description) 5 minutes
-* [Lesson 5 - Front-end Development](#lesson-2---brief-description) 15 minutes
-* [Lesson 6 - Back-end Development](#lesson-2---brief-description) 10 minutes
-* [Lesson 7 - Navigation and Routing](#lesson-2---brief-description) 10 minutes (Discussion, no coding)
-* [Lesson 8 - Server Side Rendering](#lesson-2---brief-description) 10 minutes
+* [Lesson 1 - SPA Starter Kit](#lesson-1---spa-starter-kit) 10 minutes
+* [Lesson 2 - Hello World](#lesson-2---hello-world) 5 minutes
+* [Lesson 3 - WKND Events](#lesson-3---wknd-events-app) 5 minutes
+* [Lesson 4 - JSON Contract](#lesson-4---json-contract) 5 minutes
+* [Lesson 5 - Front-end Development](#lesson-5---front-end-development) 15 minutes
+* [Lesson 6 - Back-end Development](#lesson-6---back-end-development) 10 minutes
+* [Lesson 7 - Navigation and Routing](#lesson-7---navigation-and-routing) 10 minutes (Discussion, no coding)
+* [Lesson 8 - Server Side Rendering](#lesson-8---server-side-rendering) 10 minutes
 * [Next Steps](#next-steps)
 * [Appendix](#appendix)
 
@@ -74,6 +74,8 @@ $ npm --version
 
 ## Lesson 1 - SPA Starter Kit 
 
+> Danny
+
 ### Objective
 
 1. Create a new SPA-enabled project with the Maven Archetype for SPA Starter Kit.
@@ -104,6 +106,8 @@ To achieve this integration two tools will be used:
 
 ## Lesson 2 - Hello World
 
+> Danny
+
 ### Objective
 
 1. As an AEM author, add a text component to the page and author a new message.
@@ -120,6 +124,8 @@ The goal of the SPA Editor is to allow marketers to be able to make in-context e
 
 ## Lesson 3 - WKND Events App
 
+> Danny
+
 ### Objective
 
 1. Install the **WKND Events App** to a local AEM instance.
@@ -133,6 +139,8 @@ In this lesson we will install the WKND Events App. This application displays a 
 #### Exercise 3.1
 
 ## Lesson 4 - JSON Contract
+
+> Danny
 
 ### Objective
 
@@ -155,6 +163,8 @@ A new business requirement for the WKND Events App is to create a teaser-like co
 
 ## Lesson 5 - Front-end Development
 
+> Patrick
+
 ### Objective
 
 1. TODO
@@ -166,6 +176,8 @@ A new business requirement for the WKND Events App is to create a teaser-like co
 #### Exercise 5.1
 
 ## Lesson 6 - Back-end Development
+
+> Patrick
 
 ### Objective
 
@@ -179,6 +191,8 @@ A new business requirement for the WKND Events App is to create a teaser-like co
 
 ## Lesson 7 - Navigation and Routing
 
+> Patrick
+
 ### Objective
 
 1. TODO
@@ -190,6 +204,8 @@ A new business requirement for the WKND Events App is to create a teaser-like co
 #### Exercise 7.1
 
 ## Lesson 8 - Server Side Rendering
+
+> Patrick
 
 ### Objective
 
