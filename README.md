@@ -74,8 +74,6 @@ $ npm --version
 
 ## Lesson 1 - SPA Starter Kit 
 
-> Danny
-
 ### Objective
 
 1. Create a new SPA-enabled project with the Maven Archetype for SPA Starter Kit.
@@ -106,8 +104,6 @@ To achieve this integration two tools will be used:
 
 ## Lesson 2 - Hello World
 
-> Danny
-
 ### Objective
 
 1. As an AEM author, add a text component to the page and author a new message.
@@ -124,8 +120,6 @@ The goal of the SPA Editor is to allow marketers to be able to make in-context e
 
 ## Lesson 3 - WKND Events App
 
-> Danny
-
 ### Objective
 
 1. Install the **WKND Events App** to a local AEM instance.
@@ -140,8 +134,6 @@ In this lesson we will install the WKND Events App. This application displays a 
 
 ## Lesson 4 - JSON Contract
 
-> Danny
-
 ### Objective
 
 1. Create a new component by starting with the JSON structure.
@@ -151,6 +143,11 @@ In this lesson we will install the WKND Events App. This application displays a 
 ### Lesson Context
 
 When planning a new component it is important to start with the JSON structure that will ultimately drive the SPA component. By defining the expected JSON structure upfront this allows both front-end and back-end developers to begin working in parallel. 
+
+![Separation of Concerns](./images/separation-concerns.png)
+
+
+#### Back-end developer
 
 A new business requirement for the WKND Events App is to create a teaser-like component for Sponsored content. The mockups for the app are below:
 
