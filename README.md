@@ -164,11 +164,21 @@ A new business requirement for the WKND Events App is to create a teaser-like co
 
 ### Objective
 
-1. TODO
+1. Observe how frontend components map to AEM resources
+2. Hear about how the data structure served by AEM is provided as component properties
+3. Learn how to drive the content author experience
+4. Better understand the role played by the ModelManager
+5. Get an overview of the main components provided by the SDK
 
 ### Lesson Context
 
-> TODO
+> The lesson illustrates how editable frontend components are developed. The chapter will go through topics such as 
+
+* The consumption of AEM data
+* The notion of library of components
+* The goods of delegating of the content structure
+* The dynamic instantiation of components
+* How to pilot the authoring experience
 
 #### Exercise 5.1
 
@@ -178,11 +188,12 @@ A new business requirement for the WKND Events App is to create a teaser-like co
 
 ### Objective
 
-1. TODO
+1. What is the role played by the Sling Models?
+3. What are the interfaces expected by the frontend libraries?
 
 ### Lesson Context
 
-> TODO
+> The lesson covers all the details about how raw data is processed and served to the frontend libraries.
 
 #### Exercise 6.1
 
@@ -192,11 +203,12 @@ A new business requirement for the WKND Events App is to create a teaser-like co
 
 ### Objective
 
-1. TODO
+1. See the relationship between the App routing and the ModelRouter
+2. The multiple degrees of authorability: Dynamicity for portability and reusiablity
 
 ### Lesson Context
 
-> TODO
+> The lesson exposes the relationship between the App routing and the ModelRouter, the notion of asynchronous model and the ModelRouter configuration. It also lists the multiple degrees of "authorability" and trade-off.
 
 #### Exercise 7.1
 
@@ -206,19 +218,14 @@ A new business requirement for the WKND Events App is to create a teaser-like co
 
 ### Objective
 
-1. What is Server Side Rendering or SSR?
+1. What is Server Side Rendering?
 2. Why use Server Side Rendering?
-3. Understand two approaches for using SSR with AEM SPA Editor 
+3. Understand the two main SSR architectures and their trade-off
 
 
 ### Lesson Context
 
-> TODO 
-
-1. Two approaches
-    1. external Node server serves the app and consumes content from AEM headless
-    2. AEM instance and an OSGi service in the middle POSTs the model to the Node Instance and injects it into the HTML of the AEM Page
-2. ideally spin local Node instance and connect AEM simulate SSR
+> The lesson presents two architectures where either an AEM or a Node instance serves the content and what are the implications of each architecture.
 
 #### Exercise 8.1
 
