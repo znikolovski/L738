@@ -162,15 +162,16 @@ A new business requirement for the WKND Events App is to create a teaser-like co
 
 ### Objective
 
-1. Register a frontend component to map a backend data structure
-2. Observe how the data structure served by AEM is transformed into component properties
-3. Drive the content author experience from the frontend component
-4. Understand the role played by the ModelManager
-5. Get to know the main components provided by the SPA SDK
+1. Register a frontend component to map a backend data structure.
+2. Learn how the data structure served by AEM is transformed into component properties.
+3. Drive the content author experience from the frontend component.
+4. Understand the role played by the ModelManager.
+5. Get to know the main components provided by the SPA SDK.
+6. Observe components becoming editable.
 
 ### Lesson Context
 
-The lesson illustrates how editable frontend components are developed and how the AEM data is provided as properties. Get more familiar with the notion of library of frontend component and the dynamic instantiation of components. Better understand the motivations and advantages of delegating the content structure to AEM. Learn how to support the author's experience from the frontend within the frontend project.
+The lesson illustrates how editable frontend components are developed and how the AEM data is provided as properties. Get more familiar with the notion of library of frontend component and the dynamic instantiation of components. Better understand the motivations and advantages of delegating the content structure to AEM. Learn how to support the author's experience from within the frontend project.
 
 #### Exercise 5.1
 
@@ -178,9 +179,9 @@ The lesson illustrates how editable frontend components are developed and how th
 
 ### Objective
 
-1. Familiarize yourself with the Sling Model Exporter
-2. Discover the interfaces that are at the heart of the communication layer between AEM and the frontend libraries
-3. Expose a new field by adding a simple getter
+1. Familiarize yourself with the Sling Model Exporter.
+2. Discover the interfaces that are at the heart of the communication layer between AEM and the frontend libraries.
+3. Expose a new field by adding a simple getter.
 
 ### Lesson Context
 
@@ -192,8 +193,8 @@ The lesson explores how data is processed and serialized. Implement the interfac
 
 ### Objective
 
-1. Understand relationship and differences between the App routing and the ModelRouter
-2. Consider the multiple degrees of editing capabilities: Portability and re-usability of the frontend script
+1. Understand relationship and differences between the App routing and the ModelRouter.
+2. Consider the multiple degrees of editing capabilities: Portability and re-usability of the frontend script.
 
 ### Lesson Context
 
@@ -205,9 +206,9 @@ The lesson exposes the relationship and differences between the App routing and 
 
 ### Objective
 
-1. Get more familiar with the Server Side Rendering of frontend components
-2. Improve the SEO of the project using Server Side Rendering
-3. Compare two possible SSR architectures and their trade-off
+1. Get more familiar with the Server Side Rendering of frontend components.
+2. Improve the SEO of the project using Server Side Rendering.
+3. Compare two possible SSR architectures and their trade-off.
 
 
 ### Lesson Context
