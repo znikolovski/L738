@@ -137,8 +137,8 @@ In this lesson we will install the WKND Events App. This application displays a 
 ### Objective
 
 1. Create a new component by starting with the JSON structure.
-2. Learn how creating a JSON contract upfront can faciliate Front-end and back-end development in parallel.
-3. Plan what parts of the component will editable and the impact this has on the development responsibilities.
+2. Learn how creating a JSON contract upfront can facilitate Front-end and back-end development in parallel.
+3. Plan what parts of the component will be editable and the impact this has on the development responsibilities.
 
 ### Lesson Context
 
@@ -160,72 +160,62 @@ A new business requirement for the WKND Events App is to create a teaser-like co
 
 ## Lesson 5 - Front-end Development
 
-> Patrick
-
 ### Objective
 
-1. Observe how frontend components map to AEM resources
-2. Hear about how the data structure served by AEM is provided as component properties
-3. Learn how to drive the content author experience
-4. Better understand the role played by the ModelManager
-5. Get an overview of the main components provided by the SDK
+1. Register a frontend component to map a backend data structure.
+2. Learn how the data structure served by AEM is transformed into component properties.
+3. Drive the content author experience from the frontend component.
+4. Understand the role played by the ModelManager.
+5. Get to know the main components provided by the SPA SDK.
+6. Observe components becoming editable.
 
 ### Lesson Context
 
-> The lesson illustrates how editable frontend components are developed. The chapter will go through topics such as 
-
-* The consumption of AEM data
-* The notion of library of components
-* The goods of delegating of the content structure
-* The dynamic instantiation of components
-* How to pilot the authoring experience
+The lesson illustrates how editable frontend components are developed and how the AEM data is provided as properties. Get more familiar with the notion of library of frontend component and the dynamic instantiation of components. Better understand the motivations and advantages of delegating the content structure to AEM. Learn how to support the author's experience from within the frontend project.
 
 #### Exercise 5.1
 
 ## Lesson 6 - Back-end Development
 
-> Patrick
-
 ### Objective
 
-1. What is the role played by the Sling Models?
-3. What are the interfaces expected by the frontend libraries?
+1. Familiarize yourself with the Sling Model Exporter.
+2. Discover the interfaces that are at the heart of the communication layer between AEM and the frontend libraries.
+3. Expose a new field by adding a simple getter.
 
 ### Lesson Context
 
-> The lesson covers all the details about how raw data is processed and served to the frontend libraries.
+The lesson explores how data is processed and serialized. Implement the interfaces that constitute the main building blocks of the data structure exposed to the frontend libraries. As the project progresses, expose new fields.
 
 #### Exercise 6.1
 
 ## Lesson 7 - Navigation and Routing
 
-> Patrick
-
 ### Objective
 
-1. See the relationship between the App routing and the ModelRouter
-2. The multiple degrees of authorability: Dynamicity for portability and reusiablity
+1. Understand relationship and differences between the App routing and the ModelRouter.
+2. Consider the multiple degrees of editing capabilities: Portability and re-usability of the frontend script.
 
 ### Lesson Context
 
-> The lesson exposes the relationship between the App routing and the ModelRouter, the notion of asynchronous model and the ModelRouter configuration. It also lists the multiple degrees of "authorability" and trade-off.
+The lesson exposes the relationship and differences between the App routing and the ModelRouter. Optimize the data model initially delivered to the App and let the ModelRouter asynchronously load the remaining data. Learn how to build your frontend project to benefit from all the authoring capabilities offered by AEM.
 
 #### Exercise 7.1
 
 ## Lesson 8 - Server Side Rendering
 
-> Patrick
-
 ### Objective
 
-1. What is Server Side Rendering?
-2. Why use Server Side Rendering?
-3. Understand the two main SSR architectures and their trade-off
+1. Get more familiar with the Server Side Rendering of frontend components.
+2. Improve the SEO of the project using Server Side Rendering.
+3. Compare two possible SSR architectures and their trade-off.
 
 
 ### Lesson Context
 
-> The lesson presents two architectures where either an AEM or a Node instance serves the content and what are the implications of each architecture.
+The lesson provides examples of Server-Side Rendered SPA and exposes the main advantages of such an architecture. Compare different architectures and their trade-off.
+
+![SSR](./images/server-side-rendering-cms-driven.png)
 
 #### Exercise 8.1
 
