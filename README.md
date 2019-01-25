@@ -88,7 +88,7 @@ or
 
 Complete only the exercise that corresponds to the framework you have chosen. 
 
-> Or if you are ambitious do both!
+**Or if you are ambitious do both!**
 
 ## Lab Resources
 
