@@ -1,0 +1,42 @@
+{
+  "name": "react-app",
+  "version": "1.1.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build && clientlib --verbose",
+    "test": "react-scripts test",
+    "test:debug": "react-scripts --inspect-brk test --no-cache --runInBand",
+    "eject": "react-scripts eject"
+  },
+  "proxy": "http://localhost:4502",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "dependencies": {
+    "@adobe/cq-react-editable-components": "~1.0.4",
+    "@adobe/cq-spa-component-mapping": "~1.0.3",
+    "@adobe/cq-spa-page-model-manager": "~1.0.3",
+    "aem-clientlib-generator": "^1.4.1",
+    "clone": "^2.1.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-fast-compare": "^2.0.2",
+    "react-router-dom": "^4.3.1",
+    "react-test-renderer": "^16.7.0",
+    "react-scripts": "^2.1.3"
+  },
+  "devDependencies": {
+    "babel-preset-react": "^6.24.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "sinon": "^7.2.2"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

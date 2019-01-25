@@ -46,8 +46,12 @@ A local author instance of AEM should be installed running locally on port 4502
 * [npm 6+](https://www.npmjs.com/)
 
 #### IDE
-* [Visual Studio Code](https://code.visualstudio.com/) with [Repo](https://github.com/Adobe-Marketing-Cloud/tools/tree/master/repo#integration-into-visual-studio-code) or [AEM Sync](https://marketplace.visualstudio.com/items?itemName=Yinkai15.aemsync)
-* [Eclipse IDE with AEM Dev Tools](https://eclipse.adobe.com/aem/dev-tools/)
+
+The lab will use Visual Studio Code as the IDE and screenshots will be of Visual Studio Code. IntelliJ, Eclipse are also perfectly valid IDEs to work in. 
+
+See [Set up a Local AEM Development Environment](https://helpx.adobe.com/experience-manager/kt/platform-repository/using/local-aem-dev-environment-article-setup.html) for detailed instructions.
+
+* [Visual Studio Code](https://code.visualstudio.com/) with [Repo](https://github.com/Adobe-Marketing-Cloud/tools/tree/master/repo#integration-into-visual-studio-code)
 
 Start by double checking that the above tools have been installed and available via the command line path. 
 
@@ -72,11 +76,29 @@ $ npm --version
 6.2.0
 ```
 
+## Angular + React
+
+This lab has been written so that participants can complete the lab in either Angular or React frameworks. Throughout the manual you may see indicator icons like the following:
+
+#### ![React](./images/react-logo.png) Exercise xyz (React only)
+
+or
+
+#### ![Angular](./images/angular-logo.png) Exercise xyz (Angular only)
+
+Complete only the exercise that corresponds to the framework you have chosen. 
+
+> Or if you are ambitious do both!
+
+## Lab Resources
+
+There are a number for files that will be used in the lab. If completing this lab in person, the files are already downloaded to the Desktop under a folder named `resources`. You can also find the same [resources online in the git repository](./resources).
+
 ## Lesson 1 - SPA Starter Kit 
 
 ### Objective
 
-1. Create a new SPA-enabled project with the Maven Archetype for SPA Starter Kit.
+1. Learn the best practices for starting a new SPA enablement project with the [Maven Archetype for SPA Starter Kit](https://github.com/adobe/aem-spa-project-archetype/tree/master).
 2. Learn how a webpack project's build artifacts can be integrated and deployed as an AEM client library.
 3. Understand how the plugins of [aem-clientlib-generator](https://www.npmjs.com/package/aem-clientlib-generator) and [frontend-maven-plugin](https://github.com/eirslett/frontend-maven-plugin) are used to automate the build process.
 
@@ -99,8 +121,167 @@ The concept is similar to the integration of the **core** Java bundle, where the
 
 To achieve this integration two tools will be used:
 
-1. [aem-clientlib-generator](https://www.npmjs.com/package/aem-clientlib-generator) - used to transform compiled CSS and JS files into an AEM client library
-2. [frontend-maven-plugin](https://github.com/eirslett/frontend-maven-plugin) - used to trigger NPM commands via a Maven build. This plugin will download/install Node and NPM locally for the project, ensuring consistency and making the project easy to integrate with a Continuous Integration/Continuous Deployment environment.
+* [aem-clientlib-generator](https://www.npmjs.com/package/aem-clientlib-generator) - used to transform compiled CSS and JS files into an AEM client library
+* [frontend-maven-plugin](https://github.com/eirslett/frontend-maven-plugin) - used to trigger NPM commands via a Maven build. This plugin will download/install Node and NPM locally for the project, ensuring consistency and making the project easy to integrate with a Continuous Integration/Continuous Deployment environment.
+
+### ![React](./images/react-logo.png) Exercise 1.1 - Open the L738 SPA React Project
+
+1. The [Maven Archetype for SPA Starter Kit](https://github.com/adobe/aem-spa-project-archetype/tree/master) was used to create a new SPA project with React. The following [parameters](./resources/lesson-1/React-archetype-params.txt) were used:
+
+    ```
+    mvn archetype:generate -B \
+        -DarchetypeCatalog=local  \
+        -DarchetypeGroupId=com.adobe.cq.spa.archetypes  \
+        -DarchetypeArtifactId=aem-spa-project-archetype  \
+        -DarchetypeVersion=1.0.3-SNAPSHOT \
+        -Dpackage=summitlab \
+        -DgroupId=com.adobe.summit \
+        -DartifactId=L738-spa-react \
+        -Dversion=0.0.1-SNAPSHOT \
+        -DprojectTitle="L738 SPA React App"  \
+        -DprojectName=L738-react  \
+        -DcomponentGroup="L738 React Content" \
+        -DoptionFrontend=react
+    ```
+
+2. Open **Visual Studio Code** IDE
+3. Click **Open Folder** and navigate to **Desktop** > **resources** > **lesson-1** > **L738-spa-react**
+![L738-spa-react](./images/l738-spa-react-project.png)
+4. There are 5 folders in the project that represent individual Maven modules
+    * **all** Combines all modules in a single package
+    * **core**: OSGi bundle containing Java code
+    * **react-app** React application
+    * **ui.apps** - AEM components and dialog definitions
+    * **ui.content** - AEM templates and configurations
+5.  Beneath the **react-app** folder, open the file: `package.json`. Inspect the **npm** scripts **build** command:
+
+    `"build": "react-scripts build && clientlib --verbose"`
+
+    This will trigger a production build of the react application and then copy the compiled JS and CSS into an AEM Client library.
+6. Beneath the **react-app** folder, open the file: `clientlib.config.js`. This is the [aem-clientlib-generator](https://www.npmjs.com/package/aem-clientlib-generator) used to transform the production build of the react app into an AEM client library that will be copied into the **ui.apps** folder.
+
+### ![React](./images/react-logo.png) Exercise 1.2 - Build the L738 SPA React Project
+
+1. In **Visual Studio Code** from menu bar > **Terminal** > **New Terminal**
+
+    ![Open terminal](./images/open-terminal.png)
+
+2. The terminal should default to be in the directory: `~/Desktop/resources/lesson-1/L738-spa-react`.
+3. Run the following command in the terminal:
+
+    ```
+    $ mvn -PautoInstallPackage clean install
+    ```
+    This will build and deploy the application to a local instance of AEM running at [http://localhost:4502](http://localhost:4502).
+
+    ```
+    [INFO] ------------------------------------------------------------------------
+    [INFO] Reactor Summary:
+    [INFO]
+    [INFO] L738 SPA React App Reactor ......................... SUCCESS [  0.300 s]
+    [INFO] L738 SPA React App Core ............................ SUCCESS [  6.849 s]
+    [INFO] L738 SPA React App React App ....................... SUCCESS [ 32.572 s]
+    [INFO] L738 SPA React App - SPA UI apps ................... SUCCESS [  1.152 s]
+    [INFO] L738 SPA React App - SPA UI content ................ SUCCESS [  0.644 s]
+    [INFO] L738 SPA React App All-in-One ...................... SUCCESS [  0.885 s]
+    [INFO] ------------------------------------------------------------------------
+    [INFO] BUILD SUCCESS
+    [INFO] ------------------------------------------------------------------------
+    [INFO] Total time: 43.965 s
+    [INFO] Finished at: 2019-01-25T17:27:13-05:00
+    [INFO] Final Memory: 55M/714M
+    ```
+4. Open a new browser and navigate to AEM: [http://localhost:4502](http://localhost:4502).
+5. Login using the credentials:
+    * User name: **admin**
+    * Password: **admin**
+6. Click **Tools** > **Deployment** > **Packages** to navigate to CRX Package Manager:
+
+    ![Package Manager](./images/package-manager.png)
+
+7. You should see that the package has been deployed:
+
+    ![L738 React Package](./images/deployed-packagesl738-react.png)
+
+
+### ![Angular](./images/angular-logo.png) Exercise 1.1 - Open the L738 SPA Angular Project
+
+1. The [Maven Archetype for SPA Starter Kit](https://github.com/adobe/aem-spa-project-archetype/tree/master) was used to create a new SPA project with Angular. The following [parameters](./resources/lesson-1/Angular-archetype-params.txt) were used:
+
+    ```
+    mvn archetype:generate -B \
+     -DarchetypeCatalog=local  \
+     -DarchetypeGroupId=com.adobe.cq.spa.archetypes  \
+     -DarchetypeArtifactId=aem-spa-project-archetype  \
+     -DarchetypeVersion=1.0.3-SNAPSHOT \
+     -Dpackage=summitlab \
+     -DgroupId=com.adobe.summit \
+     -DartifactId=L738-spa-angular \
+     -Dversion=0.0.1-SNAPSHOT \
+     -DprojectTitle="L738 SPA Angular App"  \
+     -DprojectName=L738-angular  \
+     -DcomponentGroup="L738 Angular Content" \
+     -DoptionFrontend=angular
+    ```
+
+2. Open **Visual Studio Code** IDE
+3. Click **Open Folder** and navigate to **Desktop** > **resources** > **lesson-1** > **L738-spa-angular**
+![L738-spa-angular](./images/l738-spa-angular-project.png)
+4. There are 5 folders in the project that represent individual Maven modules
+    * **all** Combines all modules in a single package
+    * **core**: OSGi bundle containing Java code
+    * **angular-app** Angular application
+    * **ui.apps** - AEM components and dialog definitions
+    * **ui.content** - AEM templates and configurations
+5.  Beneath the **angular-app** folder, open the file: `package.json`. Inspect the **npm** scripts **build** command:
+
+    `"build": "ng build --build-optimizer=false && clientlib"`
+
+    This will trigger a production build of the angular application and then copy the compiled JS and CSS into an AEM Client library.
+6. Beneath the **angular-app** folder, open the file: `clientlib.config.js`. This is the [aem-clientlib-generator](https://www.npmjs.com/package/aem-clientlib-generator) used to transform the production build of the angular app into an AEM client library that will be copied into the **ui.apps** folder.
+
+### ![Angular](./images/angular-logo.png) Exercise 1.2 - Build the L738 SPA Angular Project
+
+1. In **Visual Studio Code** from menu bar > **Terminal** > **New Terminal**
+
+    ![Open terminal](./images/open-terminal.png)
+
+2. The terminal should default to be in the directory: `~/Desktop/resources/lesson-1/L738-spa-angular`.
+3. Run the following command in the terminal:
+
+    ```
+    $ mvn -PautoInstallPackage clean install
+    ```
+    This will build and deploy the application to a local instance of AEM running at [http://localhost:4502](http://localhost:4502).
+
+    ```
+    [INFO] ------------------------------------------------------------------------
+    [INFO] Reactor Summary:
+    [INFO]
+    [INFO] L738 SPA Angular App Reactor ....................... SUCCESS [  0.306 s]
+    [INFO] L738 SPA Angular App Core .......................... SUCCESS [  6.495 s]
+    [INFO] L738 SPA Angular App Angular App ................... SUCCESS [ 34.384 s]
+    [INFO] L738 SPA Angular App - SPA UI apps ................. SUCCESS [  1.922 s]
+    [INFO] L738 SPA Angular App - SPA UI content .............. SUCCESS [  0.615 s]
+    [INFO] L738 SPA Angular App All-in-One .................... SUCCESS [  1.137 s]
+    [INFO] ------------------------------------------------------------------------
+    [INFO] BUILD SUCCESS
+    [INFO] ------------------------------------------------------------------------
+    [INFO] Total time: 46.440 s
+    [INFO] Finished at: 2019-01-25T17:44:17-05:00
+    [INFO] Final Memory: 59M/707M
+    ```
+4. Open a new browser and navigate to AEM: [http://localhost:4502](http://localhost:4502).
+5. Login using the credentials:
+    * User name: **admin**
+    * Password: **admin**
+6. Click **Tools** > **Deployment** > **Packages** to navigate to CRX Package Manager:
+
+    ![Package Manager](./images/package-manager.png)
+
+7. You should see that the package has been deployed:
+
+    ![L738 React Package](./images/deployed-packagesl738-angular.png)
 
 ## Lesson 2 - Hello World
 

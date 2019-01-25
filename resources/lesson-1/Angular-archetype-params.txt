@@ -1,0 +1,13 @@
+mvn archetype:generate -B \
+     -DarchetypeCatalog=local  \
+     -DarchetypeGroupId=com.adobe.cq.spa.archetypes  \
+     -DarchetypeArtifactId=aem-spa-project-archetype  \
+     -DarchetypeVersion=1.0.3-SNAPSHOT \
+     -Dpackage=summitlab \
+     -DgroupId=com.adobe.summit \
+     -DartifactId=L738-spa-angular \
+     -Dversion=0.0.1-SNAPSHOT \
+     -DprojectTitle="L738 SPA Angular App"  \
+     -DprojectName=L738-angular  \
+     -DcomponentGroup="L738 Angular Content" \
+     -DoptionFrontend=angular
