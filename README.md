@@ -297,7 +297,7 @@ The goal of the SPA Editor is to allow marketers to be able to make in-context e
 
 ![Map to](./images/mapto-diagram.png)
 
-#### Exercise 2.1 Add a text component to the page and author a new message
+#### Exercise 2.1 - Add a text component to the page and author a new message
 
 1. From the AEM Start Menu [http://localhost:4502/aem/start.html](http://localhost:4502/aem/start.html) Navigate to **Sites**.
 
@@ -322,7 +322,7 @@ The goal of the SPA Editor is to allow marketers to be able to make in-context e
 
 6. Edit the new **Text** component to create another message by clicking the **Wrench** icon ![wrench dialog](./images/lesson-2/wrench-icon.png)
 
-#### Exercise 2.2 Visualize the persisted data
+#### Exercise 2.2 - Visualize the persisted data
 
 1. Visualize the persisted data in CRXDE lite by opening a **new tab** and navigating to [http://localhost:4502/crx/de/index.jsp](http://localhost:4502/crx/de/index.jsp)
 2. Use the **Navigation Tree** on the left side to navigate to the Home Page
@@ -337,7 +337,7 @@ The goal of the SPA Editor is to allow marketers to be able to make in-context e
 
 4. View the properties of the second **Text** component that was added to the page.
 
-#### Exercise 2.3 Visualize the serialized data
+#### Exercise 2.3 - Visualize the serialized data
 
 1. In the browser, return to the Home page:
 
@@ -404,7 +404,7 @@ The goal of the SPA Editor is to allow marketers to be able to make in-context e
 
 Observe the JSON data structure to have a better idea of how your component is represented. Note the internal fields prefixed with the colon character. These fields are mostly used by the SPA SDK to traverse the hierarchy of components and enable the dynamic instantiation of components. We will explore further how the model of the component is generated on the backend in [Lesson 6 - Back-end Development](#lesson-6---back-end-development)
 
-#### Exercise 2.4 Visualize the frontend text component source code
+#### Exercise 2.4 - Visualize the frontend text component source code
 
 1. Return to **Visual Studio Code** IDE
 2. Open the file(s) containing the source code of the **Text** componenent:
@@ -426,16 +426,81 @@ Observe the JSON data structure to have a better idea of how your component is r
 ### Objective
 
 1. Install the **WKND Events App** to a local AEM instance.
-2. Inspect a more mature SPA that was built based on the SPA Starter kit.
-3. Understand advanced use cases with the SPA Editor with **List** and **Content Fragment** components.
+2. Inspect a more mature SPA, built based on the SPA Starter kit.
+3. Understand advanced use cases with the SPA Editor.
 
 ### Lesson Context
 
 In this lesson we will install the WKND Events App. This application displays a series of upcoming events and information for the ficticious life-style brand WKND. The application provides an example how structured data can be combined with editorial content to create a rich and compelling experience. In the following lessons, the WKND Events App will be extended. 
 
-#### Exercise 3.1
+> This version of the WKND Events app has been modified to include both React and Angular code bases. **Note** that this is **not** a standard, but done to make it easier to go through the lab material. In a real-world use case, typically only a single JS framework would be used.
+
+#### Exercise 3.1 - Open WKND Events Project
+
+1. Open **Visual Studio Code**
+2. Click **Open Folder** and navigate to **Desktop** > **resources** > **lesson-3** > **aem-guides-wknd-events**
+![wknd-events folder](./images/lesson-3/vscode-wknd-events.png)
+3. There are 5 folders in the project that represent individual Maven modules
+    * **angular-app** Angular version of WKND Events
+    * **core**: OSGi bundle containing Java code
+    * **react-app** React version of WKND Events
+    * **ui.apps** - AEM components and dialog definitions
+    * **ui.content** - AEM templates and configurations
+
+### Exercise 3.2 - Build the WKND Events Project
+
+1. In **Visual Studio Code** from menu bar > **Terminal** > **New Terminal**
+
+    ![Open terminal](./images/open-terminal.png)
+
+2. The terminal should default to be in the directory: `~/Desktop/resources/lesson-3/aem-guides-wknd-events`.
+3. Run the following command in the terminal:
+
+    ```
+    $ mvn -PautoInstallPackage clean install
+    ```
+    This will build and deploy the application to a local instance of AEM running at [http://localhost:4502](http://localhost:4502).
+
+    ```
+    [INFO] ------------------------------------------------------------------------
+    [INFO] Reactor Summary:
+    [INFO]
+    [INFO] aem-guides-wknd-events ............................. SUCCESS [  0.357 s]
+    [INFO] WKND Events - Core ................................. SUCCESS [  2.692 s]
+    [INFO] WKND Events - React App ............................ SUCCESS [ 59.979 s]
+    [INFO] WKND Events - Angular App .......................... SUCCESS [ 32.656 s]
+    [INFO] WKND Events - UI content ........................... SUCCESS [  5.754 s]
+    [INFO] WKND Events - UI apps .............................. SUCCESS [  1.213 s]
+    [INFO] ------------------------------------------------------------------------
+    [INFO] BUILD SUCCESS
+    [INFO] ------------------------------------------------------------------------
+    ```
+4. Open the browser and navigate to AEM: [http://localhost:4502](http://localhost:4502).
+5. Click **Tools** > **Deployment** > **Packages** to navigate to CRX Package Manager: [http://localhost:4502/crx/packmgr/index.jsp](http://localhost:4502/crx/packmgr/index.jsp)
+6. You should see that the package has been deployed:
+
+    ![WKND Events Packages](./images/lesson-3/wknd-packages.png)
+
+### Exercise 3.3 - View the WKND Events App
+
+1. From the AEM Start Menu [http://localhost:4502/aem/start.html](http://localhost:4502/aem/start.html) Navigate to **Sites**.
+
+    ![Sites icon](./images/sites-icon.png)
+
+2. ![React Logo](./images/react-logo.png) Navigate to **WKND Events** > **React** > **Home** and open the page using the Sites Editor:
+
+    ![Open React Home](./images/lesson-3/sites-navigation.png)
+
+    **or** ![Angular Logo](./images/angular-logo.png) Navigate to **WKND Events** > **Angular** > **Home** and open the page using the Sites Editor:
+3. Inspect the application's home page. 
+4. Switch the Sites Editor to **Preview** mode by clicking the **Preview** button in the upper right-hand corner: ![Preview](./images/lesson-3/preview-button.png).
+5. Navigate to different parts of the app by clicking the links in the custom **List** component.
 
 ## Lesson 4 - JSON Contract
+
+A new business requirement for the WKND Events App is to create a teaser-like component for promoted content. The mockup for the **Promo** component is below:
+
+![Sponsored Content Mockups](./images/lesson-4/promo-mockup.png)
 
 ### Objective
 
@@ -447,19 +512,40 @@ In this lesson we will install the WKND Events App. This application displays a 
 
 When planning a new component it is important to start with the JSON structure that will ultimately drive the SPA component. By defining the expected JSON structure upfront this allows both front-end and back-end developers to begin working in parallel. 
 
-![Separation of Concerns](./images/separation-concerns.png)
+![Separation of Concerns](./images/lesson-4/separation-concerns.png)
 
+#### Exercise 4.1 - Update the Mock JSON
 
-#### Back-end developer
+1. Switch back to the **Visual Studio Code** IDE and open the **AEM Guides WKND Events** project (from Lesson 3).
+2. Open the mock JSON file:
+    * ![React Logo](./images/react-logo.png) React: **react-app** > **public** > Open the file **mock.model.json**.
+    * ![Angular Logo](./images/angular-logo.png) Angular: **angurl-app** > **src** > **mocks** > **json** > **angular.model.json**
+3. Find the JSON for the **Promo** component by searching for the keyword `promo`. The JSON structure for the component has already been partially stubbed-out. Note the internal field `:type` and the value of `wknd-events/components/content/promo`. This is the property that will tie the React component with the JSON properties.
+4. Update the JSON to add a new property with a key of `offerText`:
 
-A new business requirement for the WKND Events App is to create a teaser-like component for Sponsored content. The mockups for the app are below:
-
-![Sponsored Content Mockups](./images/sponsored-mockups.png)
-> WKND Events - Sponsored Content
-
- 
-
-#### Exercise 4.1
+    ```diff
+    "promo": {
+        "title": "WKNDs Free Pass",
+        "description": "<p>Get a Monthly package handcrafted for you. Secret Shows, Special Discounts, limited access art shows. Discover your city events and venues in a smarter way, relevant to your interests.</p>\r\n",
+    +    "offerText":"$200 / Month",
+        "actionsEnabled": true,
+        "actions": [
+            {
+                "title": "More",
+                "url": "#"
+            }
+        ],
+        "image": {
+            "src": "/images/sponsored-light-big.jpg",
+            "areas": [],
+            "uuid": "26bce72d-b6f7-46a6-be70-c88221825e6a",
+            "widths": [],
+            "lazyEnabled": false,
+            ":type": "wknd-events/components/content/image"
+        },
+        ":type": "wknd-events/components/content/promo"
+    }
+    ```
 
 ## Lesson 5 - Front-end Development
 
@@ -476,7 +562,78 @@ A new business requirement for the WKND Events App is to create a teaser-like co
 
 The lesson illustrates how editable frontend components are developed and how the AEM data is provided as properties. Get more familiar with the notion of library of frontend component and the dynamic instantiation of components. Better understand the motivations and advantages of delegating the content structure to AEM. Learn how to support the author's experience from within the frontend project.
 
-#### Exercise 5.1
+#### ![React Logo](./images/react-logo.png) Exercise 5.1 - Start the development server
+
+1. Within **Visual Studio Code** open the terminal (if not opened already: from menu bar > **Terminal** > **New Terminal**).
+2. The terminal should already be in the directory: `~/Desktop/resources/lesson-3/aem-guides-wknd-events`.
+3. Navigate to the `react-app` directory with the following command:
+
+    ```
+    $ cd react-app
+    ```
+4. Enter the following command to start the local developer server:
+
+    ```
+    $ npm start
+
+    Compiled successfully!
+
+    You can now view react-app in the browser.
+
+    Local:            http://localhost:3000/
+    On Your Network:  http://192.168.1.152:3000/
+
+    Note that the development build is not optimized.
+    To create a production build, use npm run build.
+    ```
+5. This should launch a new browser tab running at [http://localhost:3000](http://localhost:3000/). Navigate to [http://localhost:3000/content/wknd-events/react/home.html](http://localhost:3000/content/wknd-events/react/home.html)
+6. You should now see the WKND Events App running, but using the Mock JSON file. **Note** the Promo component is not visible.
+
+#### ![React Logo](./images/react-logo.png) Exercise 5.2 - Map JSON model to Promo Component
+
+1. Within **Visual Studio Code** navigate to **react-app** > **src** > **components** > **promo**.
+2. Open the file **Promo.js**. This is a partially stubbed out React component that will render the Promo content.
+3. At the very bottom of the file, beneath the last `}` curly brace add the following line:
+
+    ```js
+    MapTo('wknd-events/components/content/promo')(Promo, PromoEditConfig);
+    ```
+    Save your changes.
+4. Navigate to **react-app** > **src** > **components** and open the file **MappedComponents.js**.
+5. Add the following line to the end of the file:
+
+    ```js
+    require('./promo/Promo');
+    ```
+    Save your changes.
+6. Return to the browser and navigate to [http://localhost:3000/content/wknd-events/react/home.html](http://localhost:3000/content/wknd-events/react/home.html). You should now see a loosely styled version of the Promo component:
+
+![unstyled promo](./images/lesson-5/unstyled-promo.png)
+
+#### ![React Logo](./images/react-logo.png) Exercise 5.3 - Add Offer Text and Style
+
+1. Return to **Visual Studio Code** and re-open **Promo.js** beneath **react-app** > **src** > **components** > **promo**.
+2. In the `render()` method add the following snippet of JSX beneath the `h3` Promo Title:
+
+    ```diff
+    render() {
+        ...
+        <h3 className="Promo-title">{this.title}</h3>
+    +   <h6 className="Promo-offer">{this.props.offerText}</h6>
+        ...  
+    }
+    ```
+    Save your changes. The component should now render the value of the property `offerText`. 
+3. At the top of the file add the following line beneath the last `import` statement:
+
+    ```diff
+      import { Image } from '../image/Image';
+    + import "./Promo.scss";
+    ```
+    Save your changes. This will now include some styles defined in the SaSS file `Promo.scss`.
+4. Return to the browser and navigate to [http://localhost:3000/content/wknd-events/react/home.html](http://localhost:3000/content/wknd-events/react/home.html). You should now see a styled version of the Promo component with the `offerText` displayed.
+
+    ![offer Text](./images/lesson-5/offer-text-styled.png)
 
 ## Lesson 6 - Back-end Development
 
