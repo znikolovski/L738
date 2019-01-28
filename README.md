@@ -297,7 +297,58 @@ The goal of the SPA Editor is to allow marketers to be able to make in-context e
 
 ![Map to](./images/mapto-diagram.png)
 
-#### Exercise 2.1
+#### Exercise 2.1 Add a text component to the page and author a new message
+
+1. Display the home page of the SPA in the page editor by navigating to http://localhost:4502/editor.html/content/wknd-events/react/home.html
+2. If necessary, log in to the instance using _admin_ as _User name_ and _Password_
+3. If prompted _Close_ the Onboarding modal
+    ![Onboarding Modal](./images/wknd-events-close-onboarding-modal.png)
+4. Select the text component that contains the word _Home_
+    ![Select and insert component](./images/wknd-events-text-component-select-home-text-to-insert-component.png)
+5. On the action bar, click on the button titled _Insert component_
+6. In the _Insert New Component_ dialog, select on the _Text_ entry
+    ![Select and insert component](./images/wknd-events-text-component-insert-new-component-dialog.png)
+7. Select the newly created text component
+8. On the action bar, click on the _Edit_ button to start inline editing the content of the text component
+9. In the editable section, type in the word _test_
+10. Validate the change by clicking the _Save_ button of the contextual action bar of the text component
+    ![Validate text edit](./images/wknd-events-text-component-authoring-validate.png)
+
+##### Exercise 2.1.1 Visualize the persisted data
+
+1. Visualize the data in CRXDE lite by navigating to 
+- Angular: http://localhost:4502/crx/de/index.jsp#/content/wknd-events/angular/home/jcr%3Acontent/root/responsivegrid/responsivegrid
+- React: http://localhost:4502/crx/de/index.jsp#/content/wknd-events/react/home/jcr%3Acontent/root/responsivegrid/responsivegrid
+2. Select the first child node prefixed with *text_*
+
+In the properties tab, you can observe the data associated with the text component you created
+    ![Text component data persistence](./images/wknd-events-text-component-data-persistence.png)
+
+##### Exercise 2.1.2 Visualize the serialized data
+
+1. Open a new tab in your browser
+2. Display the data model of the home page by navigating to http://localhost:4502/content/wknd-events/react/home.model.json
+3. In the page, search for the word _test_
+    ![Text component data model export](./images/wknd-events-text-component-export-model.png)
+
+Observe the JSON data structure to have a better idea of how your component is represented. Note the internal fields prefixed with the colon character. These fields are mostly used by the SPA SDK to traverse the hierarchy of components and enable the dynamic instantiation of components. We will explore further how the model of the component is generated on the backend in [Lesson 6 - Back-end Development](#lesson-6---back-end-development)
+
+##### Exercise 2.1.3 Visualize the frontend text component source code
+
+1. Open the _WKND - Events_ project in your IDE
+2. Open the file(s) containing the source code of the text componenent
+```
+// Angular: 
+    - Script:
+    angular-app/src/app/components/text/text.component.ts, 
+    - Template: 
+    angular-app/src/app/components/text/text.component.html
+
+// React: 
+    react-app/src/components/text/Text.js
+```
+
+Note how the _text_ field is made available and how it is being applied to the component
 
 ## Lesson 3 - WKND Events App
 
@@ -398,7 +449,74 @@ The lesson provides examples of Server-Side Rendered SPA and exposes the main ad
 
 ![SSR](./images/server-side-rendering-cms-driven.png)
 
-#### Exercise 8.1
+#### Exercise 8.1 Configure the Server-Side rendering
+
+The _WKND - events_ project only contains a _React_ Server-Side environment. To proceed with the current exercise, please start with the provided initial content for chapter 8.
+
+1. Modify the page component HTL template [a,b]
+2. Start the local NODE.js server [c]
+3. Request the page from your browser
+4. Using a web browser, navigate to one of the pages of the app
+
+a. Display the content of the HTL template for the body of the page component by navigating to the following URL
+```
+http://localhost:4502/crx/de/index.jsp#/apps/wknd-events/components/structure/page/body.html
+```
+
+b. Modify the content of the template as follow
+```
+<app-root id="root">
+    <sly data-sly-resource="${resource @ resourceType='cq/remote/content/renderer'}" />
+</app-root>
+```
+
+c. In your terminal, navigate inside the _react-app_ directory and execute the command to start the local _Node_ server
+```
+npm run start:server
+```
+
+d. Configure the AEM Remote HTML Renderer Servlet
+
+5. Navigate to the System OSGi Configuration console (http://localhost:4502/system/console/configMgr)
+6. Look for the configuration named `Remote Content Renderer - Configuration Factory`
+7. Create a new configuration and set the after-mentioned field as follow
+
+```
+Content path pattern=/content/wknd-events/react(.*)
+```
+
+8. In your browser, display the Server-Side rendered home page of the SPA by navigating to http://localhost:4502/content/wknd-events/react/home.html 
+9. Open the developer console, open the Network tab (alt+cmd+i)
+10. Activate the filter called _XHR_
+11. Refresh the page
+
+![No model request](./images/wknd-events-ssr-network-no-model-request.png)
+
+Note that there is no request to any model which would implay an entry for a URL ending with a the selector and extension such as _.model.json_
+
+12. Open the page source of the page (alt+cmd+u or cmd+click > View Page Source)
+13. In the page source, look for the tag with the id *__INITIAL_STATE__*
+
+![SSR Model Initial State](./images/wknd-events-ssr-json-model-initial-state.png)
+
+The page source exposes a source code that hasn't yet been manipulated by the SPA script. Note that the server-side script has dumped the JSON model object used to generate the initial content of the app. Finally, the frontend script present in the browser synchronizes itself with the provided JSON model object.
+
+##### Exercise 8.1.1 Server-Side Rendering Fallback
+
+Let's simulate a failure of the remote node server.
+
+1. Kill the _Node_ server instance (ctrl+c)
+2. Refresh the page source
+
+![SSR failure - Page source](./images/wknd-events-ssr-page-source-error.png)
+
+Note that in the `<app-root id="root">` tag is displayed a comment that contains the error code and message.
+
+3. Refresh the page
+
+![SSR failure - Network model request](./images/wknd-events-ssr-network-model-request.png)
+
+Note that a request to the model of the app is sent to the AEM server. The client script is has not been synchronized and initialize itself independently from the server.
 
 ## Next Steps
 
