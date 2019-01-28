@@ -124,7 +124,7 @@ To achieve this integration two tools will be used:
 * [aem-clientlib-generator](https://www.npmjs.com/package/aem-clientlib-generator) - used to transform compiled CSS and JS files into an AEM client library
 * [frontend-maven-plugin](https://github.com/eirslett/frontend-maven-plugin) - used to trigger NPM commands via a Maven build. This plugin will download/install Node and NPM locally for the project, ensuring consistency and making the project easy to integrate with a Continuous Integration/Continuous Deployment environment.
 
-### ![React](./images/react-logo.png) Exercise 1.1 - Open the L738 SPA React Project
+#### ![React](./images/react-logo.png) Exercise 1.1 - Open the L738 SPA React Project
 
 1. The [Maven Archetype for SPA Starter Kit](https://github.com/adobe/aem-spa-project-archetype/tree/master) was used to create a new SPA project with React. The following [parameters](./resources/lesson-1/React-archetype-params.txt) were used:
 
@@ -299,56 +299,127 @@ The goal of the SPA Editor is to allow marketers to be able to make in-context e
 
 #### Exercise 2.1 Add a text component to the page and author a new message
 
-1. Display the home page of the SPA in the page editor by navigating to http://localhost:4502/editor.html/content/wknd-events/react/home.html
-2. If necessary, log in to the instance using _admin_ as _User name_ and _Password_
-3. If prompted _Close_ the Onboarding modal
-    ![Onboarding Modal](./images/wknd-events-close-onboarding-modal.png)
-4. Select the text component that contains the word _Home_
-    ![Select and insert component](./images/wknd-events-text-component-select-home-text-to-insert-component.png)
-5. On the action bar, click on the button titled _Insert component_
-6. In the _Insert New Component_ dialog, select on the _Text_ entry
-    ![Select and insert component](./images/wknd-events-text-component-insert-new-component-dialog.png)
-7. Select the newly created text component
-8. On the action bar, click on the _Edit_ button to start inline editing the content of the text component
-9. In the editable section, type in the word _test_
-10. Validate the change by clicking the _Save_ button of the contextual action bar of the text component
-    ![Validate text edit](./images/wknd-events-text-component-authoring-validate.png)
+1. From the AEM Start Menu [http://localhost:4502/aem/start.html](http://localhost:4502/aem/start.html) Navigate to **Sites**.
 
-##### Exercise 2.1.1 Visualize the persisted data
+    ![Sites icon](./images/sites-icon.png)
 
-1. Visualize the data in CRXDE lite by navigating to 
-- Angular: http://localhost:4502/crx/de/index.jsp#/content/wknd-events/angular/home/jcr%3Acontent/root/responsivegrid/responsivegrid
-- React: http://localhost:4502/crx/de/index.jsp#/content/wknd-events/react/home/jcr%3Acontent/root/responsivegrid/responsivegrid
-2. Select the first child node prefixed with *text_*
+2. ![React Logo](./images/react-logo.png) Navigate to **L738-react** > **en** > **home** and open the page using the Sites Editor:
 
-In the properties tab, you can observe the data associated with the text component you created
-    ![Text component data persistence](./images/wknd-events-text-component-data-persistence.png)
+    ![Open React Home](./images/lesson-2/open-react-home.png)
 
-##### Exercise 2.1.2 Visualize the serialized data
+    **or** ![Angular Logo](./images/angular-logo.png) Navigate to **L738-angular** > **en** > **home** and open the page using the Sites Editor:
+3. Select the existing **Text** component and click the **edit** icon (pencil) to engage the in-line editor.
 
-1. Open a new tab in your browser
-2. Display the data model of the home page by navigating to http://localhost:4502/content/wknd-events/react/home.model.json
-3. In the page, search for the word _test_
-    ![Text component data model export](./images/wknd-events-text-component-export-model.png)
+    ![Edit hello world component](./images/lesson-2/select-hello-world.png)
+
+4. Update the component to read **Hello L738!**
+
+    ![Update component](./images/lesson-2/hello-l738.png)
+
+5. Add a new **Text** Component by opening up the **Content Finder** > **Components** > Drag+Drop a new **Text** Component on to the page:
+
+    ![new component](./images/lesson-2/drag-new-textcomponent.png)
+
+6. Edit the new **Text** component to create another message by clicking the **Wrench** icon ![wrench dialog](./images/lesson-2/wrench-icon.png)
+
+#### Exercise 2.2 Visualize the persisted data
+
+1. Visualize the persisted data in CRXDE lite by opening a **new tab** and navigating to [http://localhost:4502/crx/de/index.jsp](http://localhost:4502/crx/de/index.jsp)
+2. Use the **Navigation Tree** on the left side to navigate to the Home Page
+     - ![react-logo](./images/react-logo.png) React: **content** > **L738-react** > **en** > **home** > **jcr:content** > **root** > **responsivegrid**
+    - ![angular-logo](./images/angular-logo.png) Angular: **content** > **L738-angular** > **en** > **home** > **jcr:content** > **root** > **responsivegrid**
+
+    ![crxde content tree](./images/lesson-2/crxde-tree.png)
+
+3. Select the first child node prefixed with **text_**. In the properties tab, you can observe the data associated with the text component you created
+
+    ![Text component data persistence](./images/lesson-2/text-properties.png)
+
+4. View the properties of the second **Text** component that was added to the page.
+
+#### Exercise 2.3 Visualize the serialized data
+
+1. In the browser, return to the Home page:
+
+    - ![react-logo](./images/react-logo.png) React: [http://localhost:4502/editor.html/content/L738-react/en/home.html](http://localhost:4502/editor.html/content/L738-react/en/home.html)
+    - ![angular-logo](./images/angular-logo.png) Angular: [http://localhost:4502/editor.html/content/L738-angular/en/home.html](http://localhost:4502/editor.html/content/L738-angular/en/home.html)
+
+2. Click the **Page Properties** menu bar and select **View as Published**:
+
+    ![view as published](./images/lesson-2/view-properties.png)
+
+3. Right + Click the page to view the page's source:
+
+    ![view source](./images/lesson-2/view-source.png)
+
+4. When viewing the source, **note** that there is no HTML that represent the **Text** components added to the page. This is because the components are generated via the React or Angular Javascript application. **Note** the inclusion of the script tag at the bottom of the page. This loads the compiled React or Angular application:
+
+    ```html
+    <!-- React page source -->
+    <script type="text/javascript" src="/etc.clientlibs/L738-react/clientlibs/L738-react-react.js"></script>
+    ```
+
+    ```html
+    <!-- Angular page source -->
+    <script type="text/javascript" src="/etc.clientlibs/L738-angular/clientlibs/L738-angular-angular.js"></script>
+    ```
+5. Change the extension of the home page by adding **.model.json** selectors to view the serialized json. Search for the keyword `text` to find the JSON output of the **text** components:
+
+    - ![react-logo](./images/react-logo.png) React: [http://localhost:4502/content/L738-react/en/home.model.json](http://localhost:4502/content/L738-react/en/home.model.json)
+
+    ```json
+
+    ":items": {
+        "text": {
+            "text": "<p>Hello <b>L738</b>!</p>\n",
+            "richText": true,
+            ":type": "L738-react/components/text"
+        },
+        "text_382981548": {
+            "text": "<h1>My first Heading</h1>\n",
+            "richText": true,
+            ":type": "L738-react/components/text"
+        }
+    }
+    ```
+
+    - ![angular-logo](./images/angular-logo.png) Angular: [http://localhost:4502/content/L738-angular/en/home.model.json](http://localhost:4502/content/L738-angular/en/home.model.json)
+
+    ```json
+        ...
+
+        ":items": {
+            "text": {
+                "text": "<p>Hello <b>L738</b>!</p>\n",
+                "richText": true,
+                ":type": "L738-angular/components/text"
+            },
+            "text_1800095243": {
+                "text": "<h1>My First Heading</h1>\r\n",
+                "richText": true,
+                ":type": "L738-angular/components/text"
+            }
+        }
+    ```
 
 Observe the JSON data structure to have a better idea of how your component is represented. Note the internal fields prefixed with the colon character. These fields are mostly used by the SPA SDK to traverse the hierarchy of components and enable the dynamic instantiation of components. We will explore further how the model of the component is generated on the backend in [Lesson 6 - Back-end Development](#lesson-6---back-end-development)
 
-##### Exercise 2.1.3 Visualize the frontend text component source code
+#### Exercise 2.4 Visualize the frontend text component source code
 
-1. Open the _WKND - Events_ project in your IDE
-2. Open the file(s) containing the source code of the text componenent
-```
-// Angular: 
-    - Script:
-    angular-app/src/app/components/text/text.component.ts, 
-    - Template: 
-    angular-app/src/app/components/text/text.component.html
+1. Return to **Visual Studio Code** IDE
+2. Open the file(s) containing the source code of the **Text** componenent:
 
-// React: 
-    react-app/src/components/text/Text.js
-```
+![react-logo](./images/react-logo.png) React:
 
-Note how the _text_ field is made available and how it is being applied to the component
+ * **react-app** > **src** > **components** > **Text** > **Text.js**
+
+![angular-logo](./images/angular-logo.png) Angular:
+
+ * **angular-app** > **src** > **app** > **components** > **text** > **text.component.ts**
+
+ * **angular-app** > **src** > **app** > **components** > **text** > **text.component.html**
+
+3. Note how the _text_ field is made available and how it is *mapped* to the component.
 
 ## Lesson 3 - WKND Events App
 
