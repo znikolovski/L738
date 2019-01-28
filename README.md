@@ -634,6 +634,7 @@ The lesson illustrates how editable frontend components are developed and how th
 4. Return to the browser and navigate to [http://localhost:3000/content/wknd-events/react/home.html](http://localhost:3000/content/wknd-events/react/home.html). You should now see a styled version of the Promo component with the `offerText` displayed.
 
     ![offer Text](./images/lesson-5/offer-text-styled.png)
+5. Return to **Visual Studio Code** and in the terminal press `control`+`c` to stop the development server.
 
 ## Lesson 6 - Back-end Development
 
@@ -641,13 +642,135 @@ The lesson illustrates how editable frontend components are developed and how th
 
 1. Familiarize yourself with the Sling Model Exporter.
 2. Discover the interfaces that are at the heart of the communication layer between AEM and the frontend libraries.
-3. Expose a new field by adding a simple getter.
+3. Understand the role of AEM dialogs and how they facilitate in-context authoring.
 
 ### Lesson Context
 
-The lesson explores how data is processed and serialized. Implement the interfaces that constitute the main building blocks of the data structure exposed to the frontend libraries. As the project progresses, expose new fields.
+The lesson explores how data is processed and serialized on the AEM back-end. Implement the interfaces that constitute the main building blocks of the data structure exposed to the frontend libraries. As the project progresses, expose new fields. This lesson will also explore the requirements needed to create an AEM component with a Dialog to facilitate authoring.
 
-#### Exercise 6.1
+#### Exercise 6.1 - Implement the Sling Model for the Promo component
+
+A Sling Model is an annotation-driven POJO that is used to easily model data from the JCR and add business logic. The Sling Model Exporter is an annotation that can be added to a Sling Model to easily serialize the methods in the form of JSON output.
+
+1. In **Visual Studio Code**, with the **WKND Events** project open, navigate to **core** > **src** > **main** > **java** > **com** > **adobe** > **aem** > **guides** > **wkndevents** > **core** > **models**.
+
+    ![File tree core](./images/lesson-6/java-package-tree.png)
+2. Open the file **Promo.java**. This is the Java Interface that will be implemented. It extends the Core Component [Teaser](https://helpx.adobe.com/experience-manager/core-components/using/teaser.html). The **Teaser** component provides support for a Title, Description, Image and Call To Action buttons. We will extend the **Teaser** by adding support for the **offerText**.
+3. Add the following method to the **Promo.java** interface:
+
+    ```java
+    @Nullable
+    default String getOfferText() {
+        throw new UnsupportedOperationException();
+    }
+    ```
+    Also note the static variable `PN_OFFER_TEXT`. The value of this variable will map to the name of the **offerText** property stored in the JCR.
+4. Beneath **models** folder expand the **impl** folder and open **PromoImpl.java**. This is the class that will implement the **Promo** interface and is the Sling Model. Note the following annotations:
+
+    ```java
+    @Model(
+        adaptables = SlingHttpServletRequest.class, 
+        adapters = {Promo.class, ComponentExporter.class}, 
+        resourceType = PromoImpl.RESOURCE_TYPE,
+        defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
+    )
+    @Exporter(
+        name = ExporterConstants.SLING_MODEL_EXPORTER_NAME, 
+        extensions = ExporterConstants.SLING_MODEL_EXTENSION
+    )
+    ```
+    These are the annotations that define the Sling Model and Sling Model Exporter. Also note the value of `RESOURCE_TYPE=wknd-events/components/content/promo`, which corresponds the internal `:type` value from Lesson 4 in the JSON model.
+5. Add the following code within the **PromoImpl** class to map the JCR property to a Java variable named **offerText**:
+
+    ```java
+    public class PromoImpl implements Promo {
+        ...
+
+        @ValueMapValue
+        @Named(Promo.PN_OFFER_TEXT)
+        @Optional
+        private String offerText;
+
+        ...
+    }
+    ```
+    The above code uses the [@ValueMapValue](https://sling.apache.org/apidocs/sling8/org/apache/sling/models/annotations/injectorspecific/ValueMapValue.html) annotation to inject the JCR property in to the String variable named **offerText**. The injection strategy is explicitly marked optional.
+6. Finally add a **getter** method to expose the value of the **offerText** property in the JSON output:
+
+    ```java
+    public class PromoImpl implements Promo {
+        ...
+
+        @Override
+        public String getOfferText() {
+            return offerText;
+        }
+
+        ...
+    }
+    ```
+
+#### Exercise 6.2 - Add an AEM Component to facilitate Authoring
+
+An AEM component is needed in order to allow a content author to add new versions of the **Promo** component to the page. A dialog is also needed to allow the content author to edit the individual fields of the component.
+
+1. In **Visual Studio Code**, with the **WKND Events** project open, navigate to **ui.apps** > **src** > **main** > **content** > **jcr_root** > **apps** > **wknd-events** > **components** > **content** > **promo**:
+
+    ![ui apps tree](./images/lesson-6/ui-apps-package-tree.png)
+
+2. Beneath the **promo** folder open the file named **.content.xml**. This is the component definition for the Promo Component. Note the `sling:resourceSuperType` property. This allows the Promo component to inherit all of the functionality of the Teaser component.
+3. Beneath the **promo** folder expand the folder named **_cq_dialog** and open the file named **.content.xml** beneath that. This partial XML represents the Dialog that will be shown to authors when editing the component in the AEM UI. Since this component inherits all of the functionality of the Teaser component, we only to insert a single additional field to allow the author to populate the **offer text**.
+4. In the middle of the file, find the inner-most `<items jcr:primaryType="nt:unstructured"></items>` tag. Insert the following XML in between the two tags (replacing the TODO comment):
+
+    ```xml
+    ...
+    <items jcr:primaryType="nt:unstructured">
+        <offerGroup
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/well"
+            sling:orderBefore="descriptionGroup">
+            <items jcr:primaryType="nt:unstructured">
+                <offertext
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldDescription="Text to display as the offer."
+                    fieldLabel="Offer Text"
+                    name="./offerText"/>
+            </items>
+        </offerGroup>
+    </items>
+    ...
+    ```
+
+#### Exercise 6.3 - Deploy the updated code base to AEM
+
+1. In **Visual Studio Code** from menu bar > **Terminal** > **New Terminal**
+
+    ![Open terminal](./images/open-terminal.png)
+
+2. Ensure you are in the `aem-guides-wknd-events` directory. You may need to run `$ cd ..` to navigate back to the root of the project.
+3. Run the following command in the terminal:
+
+    ```
+    $ mvn -PautoInstallPackage clean install
+    ```
+    This will build and deploy the application to a local instance of AEM running at [http://localhost:4502](http://localhost:4502).
+
+    ```
+    [INFO] ------------------------------------------------------------------------
+    [INFO] Reactor Summary:
+    [INFO]
+    [INFO] aem-guides-wknd-events ............................. SUCCESS [  0.357 s]
+    [INFO] WKND Events - Core ................................. SUCCESS [  2.692 s]
+    [INFO] WKND Events - React App ............................ SUCCESS [ 59.979 s]
+    [INFO] WKND Events - Angular App .......................... SUCCESS [ 32.656 s]
+    [INFO] WKND Events - UI content ........................... SUCCESS [  5.754 s]
+    [INFO] WKND Events - UI apps .............................. SUCCESS [  1.213 s]
+    [INFO] ------------------------------------------------------------------------
+    [INFO] BUILD SUCCESS
+    [INFO] ------------------------------------------------------------------------
+    ```
+4. Open the browser and navigate to AEM: [http://localhost:4502](http://localhost:4502).
 
 ## Lesson 7 - Navigation and Routing
 
