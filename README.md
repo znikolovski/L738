@@ -871,7 +871,13 @@ Note that a request to the model of the app is sent to the AEM server. The clien
 
 ## Next Steps
 
-At the end of your lab manual it is recommended to include a **Next Steps** section for lab attendees to continue learning.
+Follow the tutorial, read the public documentation, use the starter kit and follow the evolution of the developers' experimental project.
+
+https://helpx.adobe.com/experience-manager/kt/sites/using/getting-started-spa-wknd-tutorial-develop.html
+https://helpx.adobe.com/experience-manager/kt/sites/using/spa-editor-helloworld-tutorial-use.html
+https://github.com/adobe/aem-spa-project-archetype
+https://github.com/adobe/aem-sample-we-retail-journal
+
 
 ## Additional Resources
 
