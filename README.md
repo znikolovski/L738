@@ -445,7 +445,7 @@ In this lesson we will install the WKND Events App. This application displays a 
     * **core**: OSGi bundle containing Java code
     * **react-app** React version of WKND Events
     * **ui.apps** - AEM components and dialog definitions
-    * **ui.content** - AEM templates and configurations
+    * **ui.content** - AEM templates, configurations, and structural content
 
 ### Exercise 3.2 - Build the WKND Events Project
 
@@ -525,24 +525,28 @@ When planning a new component it is important to start with the JSON structure t
 
     ```diff
     "promo": {
-        "title": "WKNDs Free Pass",
-        "description": "<p>Get a Monthly package handcrafted for you. Secret Shows, Special Discounts, limited access art shows. Discover your city events and venues in a smarter way, relevant to your interests.</p>\r\n",
-    +    "offerText":"$200 / Month",
-        "actionsEnabled": true,
-        "actions": [
+    +    "offerText": "$2000 / Month",
+        "actionItems": [
             {
-                "title": "More",
-                "url": "#"
+                "title": "Learn More",
+                "url": "/content/wknd-events/react/home/wknd-free-pass.html"
             }
         ],
+        "description": "<p>Get a Monthly package handcrafted for <b>you</b>. Secret Shows, Special Discounts, limited access art shows. Discover your city events and venues in a smarter way, relevant to your interests.</p>\r\n",
+        "title": "Wknds Free Pass",
         "image": {
-            "src": "/images/sponsored-light-big.jpg",
+            "src": "/images/fpo.jpg",
+            "srcUriTemplate": "/content/wknd-events/react/home/_jcr_content/root/responsivegrid/promo.coreimg{.width}.jpeg/1549076604849.jpeg",
             "areas": [],
-            "uuid": "26bce72d-b6f7-46a6-be70-c88221825e6a",
-            "widths": [],
+            "uuid": "135c380d-c6b5-4035-96a3-d18ef3556327",
             "lazyEnabled": false,
+            "widths": [],
             ":type": "wknd-events/components/content/image"
         },
+        "actionsEnabled": true,
+        "linkURL": "/content/wknd-events/react/home/wknd-free-pass.html",
+        "imageLinkHidden": false,
+        "titleLinkHidden": false,
         ":type": "wknd-events/components/content/promo"
     }
     ```
@@ -574,8 +578,10 @@ The lesson illustrates how editable frontend components are developed and how th
 4. Enter the following command to start the local developer server:
 
     ```
-    $ npm start
+    $ REACT_APP_PAGE_MODEL_PATH=mock.model.json npm start
+    ```
 
+    ```
     Compiled successfully!
 
     You can now view react-app in the browser.
@@ -587,7 +593,9 @@ The lesson illustrates how editable frontend components are developed and how th
     To create a production build, use npm run build.
     ```
 5. This should launch a new browser tab running at [http://localhost:3000](http://localhost:3000/). Navigate to [http://localhost:3000/content/wknd-events/react/home.html](http://localhost:3000/content/wknd-events/react/home.html)
-6. You should now see the WKND Events App running, but using the Mock JSON file. **Note** the Promo component is not visible.
+6. You should now see the WKND Events App running using a mock JSON file located at `react-app/public/mock.model.json`.
+
+> Note the Promo component is **not** visible.
 
 #### ![React Logo](./images/react-logo.png) Exercise 5.2 - Map JSON model to Promo Component
 
@@ -632,6 +640,126 @@ The lesson illustrates how editable frontend components are developed and how th
     ```
     Save your changes. This will now include some styles defined in the SaSS file `Promo.scss`.
 4. Return to the browser and navigate to [http://localhost:3000/content/wknd-events/react/home.html](http://localhost:3000/content/wknd-events/react/home.html). You should now see a styled version of the Promo component with the `offerText` displayed.
+
+    ![offer Text](./images/lesson-5/offer-text-styled.png)
+5. Return to **Visual Studio Code** and in the terminal press `control`+`c` to stop the development server.
+
+#### ![Angular Logo](./images/angular-logo.png) Exercise 5.1 - Start the development server
+
+1. Within **Visual Studio Code** open the terminal (if not opened already: from menu bar > **Terminal** > **New Terminal**).
+2. The terminal should already be in the directory: `~/Desktop/resources/lesson-3/aem-guides-wknd-events`.
+3. Navigate to the `angular-app` directory with the following command:
+
+    ```
+    $ cd angular-app
+    ```
+4. Enter the following command to start the local developer server:
+
+    ```
+    $ ng serve --proxy-config ./proxy.mock.conf.json
+    ```
+
+    ```
+    ** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+    10% building modules 3/3 modules 0 active[HPM] Proxy created: [ '/content/**/*.model.json' ]  ->  http://localhost:4200
+    [HPM] Proxy rewrite rule created: "^/content/wknd-events" ~> "/mocks/json"
+    [HPM] Subscribed to http-proxy events:  [ 'error', 'close' ]
+    [HPM] Proxy created: [ '/content/**/*.jpg', '/content/**/*.jpeg' ]  ->  http://localhost:4200
+    [HPM] Proxy rewrite rule created: ".*" ~> "/mocks/assets/fpo.jpg"
+    [HPM] Subscribed to http-proxy events:  [ 'error', 'close' ]
+    ```
+5. Open a new browser tab and navigate to [http://localhost:4200/content/wknd-events/angular/home.html](http://localhost:4200/content/wknd-events/angular/home.html)
+6. You should now see the WKND Events App running using the file located a `angular-app/src/mocks/json/angular.model.json`.
+
+> Note the Promo component is **not** visible.
+
+#### ![Angular Logo](./images/angular-logo.png) Exercise 5.2 - Map JSON model to Promo Component
+
+1. Within **Visual Studio Code** navigate to **angular-app** > **src** > **app** > **components** > **promo**.
+2. Open the file **promo.component.ts**. This is a partially stubbed out Angular component that will render the Promo content.
+3. At the very bottom of the file, **promo.component.ts**, beneath the last `}` curly brace add the following line:
+
+    ```js
+    MapTo('wknd-events/components/content/promo')(PromoComponent, PromoEditConfig);
+    ```
+    Save your changes.
+4. Navigate to **angular-app** > **src** > **app** and open the file **app.module.ts**.
+5. Update the **@NgModule declarations** to add the `PromoComponent`:
+
+    ```diff
+    ...
+    @NgModule({
+    declarations: [
+        AppComponent,
+        PageComponent,
+        TextComponent,
+        ImageComponent,
+        HeaderComponent,
+        ListComponent,
+        EventInfoComponent,
+        EventDateComponent,
+        EventListComponent,
+        ButtonComponent,
+    +   PromoComponent        
+     ]
+    ...
+    ```
+    Save your changes.
+7. Update the **entryComponents** to add the `PromoComponent`:
+
+    ```diff
+    ...
+    entryComponents: [
+        ImageComponent, 
+        ListComponent, 
+        TextComponent,
+        EventListComponent,
+    +   PromoComponent
+       ]
+    ...
+    ```
+6. Return to the browser and navigate to [http://localhost:4200/content/wknd-events/angular/home.html](http://localhost:4200/content/wknd-events/angular/home.html). You should now see a loosely styled version of the Promo component:
+
+![unstyled promo](./images/lesson-5/unstyled-promo.png)
+
+#### ![Angular Logo](./images/angular-logo.png) Exercise 5.3 - Add Offer Text and Style
+
+1. Within **Visual Studio Code** navigate to **angular-app** > **src** > **app** > **components** > **promo**. Open the file **promo.component.ts**.
+2. Add a `styleUrls` property to the `@Component` annotation to point to the file `./promo.component.scss`:
+
+    ```diff
+    ...
+    @Component({
+      selector: 'app-promo',
+      templateUrl: './promo.component.html',
+    + styleUrls: ['./promo.component.scss']
+    })
+    export class PromoComponent implements OnInit {
+    ...
+    ```
+    Save your changes.
+3. Update the `PromoComponent` class to add a new `@Input()` for `offerText`:
+
+    ```diff
+    export class PromoComponent implements OnInit {
+      @Input() title: string;
+      @Input() description: string;
+    + @Input() offerText: string; 
+    }
+    ```
+    Save your changes.
+4. Open the file **angular-app** > **src** > **app** > **components** > **promo** > **promo.component.html**. Add the following markup to render the value of `offerText`:
+
+    ```diff
+    ...
+     <div class="Promo-content">
+        <span class="Promo-sponsor">Sponsored</span>
+        <h3 class="Promo-title">{{title}}</h3>
+    +    <h6 class="Promo-offer">{{offerText}}</h6>
+    ...
+    ```
+    Save your changes.
+5. Return to the browser and navigate to [http://localhost:4200/content/wknd-events/angular/home.html](http://localhost:4200/content/wknd-events/angular/home.html). You should now see a styled version of the Promo component with the `offerText` displayed.
 
     ![offer Text](./images/lesson-5/offer-text-styled.png)
 5. Return to **Visual Studio Code** and in the terminal press `control`+`c` to stop the development server.
@@ -771,21 +899,13 @@ An AEM component is needed in order to allow a content author to add new version
     [INFO] ------------------------------------------------------------------------
     ```
 4. Open the browser and navigate to AEM: [http://localhost:4502](http://localhost:4502).
+5. Open WKND Events Home page:
 
-## Lesson 7 - Navigation and Routing
+     * ![React Logo](./images/react-logo.png) [http://localhost:4502/editor.html/content/wknd-events/react/home.html](http://localhost:4502/editor.html/content/wknd-events/react/home.html)
+    * ![Angular Logo](./images/angular-logo.png) [http://localhost:4502/editor.html/content/wknd-events/angular/home.html](http://localhost:4502/editor.html/content/wknd-events/angular/home.html)
+6. Add **Promo** Component to the page. Configure the **Promo** component to match the mockups earlier in the Lab. Add a link to the the Promo component that points to: `/content/wknd-events/angular/home` or `/content/wknd-events/react/home`.
 
-### Objective
-
-1. Understand relationship and differences between the App routing and the ModelRouter.
-2. Consider the multiple degrees of editing capabilities: Portability and re-usability of the frontend script.
-
-### Lesson Context
-
-The lesson exposes the relationship and differences between the App routing and the ModelRouter. Optimize the data model initially delivered to the App and let the ModelRouter asynchronously load the remaining data. Learn how to build your frontend project to benefit from all the authoring capabilities offered by AEM.
-
-#### Exercise 7.1
-
-## Lesson 8 - Server Side Rendering
+## Lesson 7 - Server Side Rendering
 
 ### Objective
 
@@ -800,9 +920,13 @@ The lesson provides examples of Server-Side Rendered SPA and exposes the main ad
 
 ![SSR](./images/server-side-rendering-cms-driven.png)
 
-#### Exercise 8.1 Configure the Server-Side rendering
+### Pre-Exercise 7 - Open completed WKND Events React code base
 
-The _WKND - events_ project only contains a _React_ Server-Side environment. To proceed with the current exercise, please start with the provided initial content for chapter 8.
+The _WKND - events_ project only contains a **React** Server-Side environment. To proceed with the current exercise, please start with the provided initial content for chapter 7 located at:
+
+**Desktop** > **resources** > **lesson-7** > **aem-guides-wknd-events-START**. Complete the final exercise with that code base.
+
+#### Exercise 7.1 Configure the Server-Side rendering
 
 1. Modify the page component HTL template [a,b]
 2. Start the local NODE.js server [c]
