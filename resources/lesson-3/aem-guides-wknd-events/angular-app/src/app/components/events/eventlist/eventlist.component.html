@@ -1,0 +1,21 @@
+
+<div *ngIf="events.length > 0" class="EventList">
+    <article *ngFor="let event of events; let i = index;" 
+          [class]="(i % 2 === 0) ? 'Event Event--default' : 'Event Event--reverse'">
+      <div class="Event-column">
+        <img class="EventImage" [src]="event.image['src']" />
+      </div>
+      <div class="Event-column">
+        <div class="EventDetails">
+            <div class="EventDetails-wrapper">
+                <h1 class="EventDetails-title">{{event.title}}</h1>
+                <span class="EventDetails-city">@{{event.eventcity}}</span>
+                <div class="EventDetails-description">{{event.description}}</div>
+                <app-button [url]="event.url" title="Details"></app-button>
+            </div>
+        </div>
+      </div>
+      <app-eventdate [time]="event.eventtime"></app-eventdate>
+    </article>
+  </div>
+  

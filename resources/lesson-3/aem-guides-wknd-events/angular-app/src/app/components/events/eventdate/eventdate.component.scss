@@ -1,0 +1,119 @@
+@import '~src/styles/shared';
+
+
+//Event Date
+$EventDate-backgroundColor: $color-black;
+$EventDate-boxShadow:  0px 20px 40px rgba(8, 8, 8, 0.25);
+
+.EventDate {
+    background-color: $EventDate-backgroundColor;
+    color: $color-white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica";
+    box-shadow: $EventDate-boxShadow;
+    width: $EventDate-sizeM;
+    height: $EventDate-sizeM;
+
+    .EventDate-dateContainer {
+        display: block;
+    }
+
+    .EventDate-month {
+        text-transform: uppercase;
+        opacity: 0.35;
+        font-weight: bold;
+        font-size: ($EventDate-sizeM / 5);
+        line-height: ($EventDate-sizeM / 5);
+    }
+
+    .EventDate-day {
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: ($EventDate-sizeM / 2.7);
+        line-height: ($EventDate-sizeM / 2.7);
+    }
+
+    @include media(tablet) {
+        width: $EventDate-sizeM;
+        height: $EventDate-sizeM;
+    
+
+        .EventDate-month {
+            font-size: ($EventDate-sizeM / 5);
+            line-height: ($EventDate-sizeM / 5);
+            }
+
+        .EventDate-day {
+                font-size: ($EventDate-sizeM / 2.7);
+                line-height: ($EventDate-sizeM / 2.7);
+            }
+    }
+
+    @include media(desktop) {
+        width: $EventDate-sizeL;
+        height: $EventDate-sizeL;
+    
+
+        .EventDate-month {
+            font-size: ($EventDate-sizeL / 5);
+            line-height: ($EventDate-sizeL / 5);
+        }
+
+        .EventDate-day {
+            font-size: ($EventDate-sizeL / 2.7);
+            line-height: ($EventDate-sizeL / 2.7);
+        }
+    }
+
+    &--medium {
+        width: $EventDate-sizeM;
+        height: $EventDate-sizeM;
+    
+
+        .EventDate-month {
+            font-size: ($EventDate-sizeM / 5);
+            line-height: ($EventDate-sizeM / 5);
+            }
+
+        .EventDate-day {
+                font-size: ($EventDate-sizeL / 2.7);
+                line-height: ($EventDate-sizeL / 2.7);
+            }
+        }
+
+        &--small {
+            width: $EventDate-sizeS;
+            height: $EventDate-sizeS;
+
+            .EventDate--small .EventDate-month {
+                font-size: ($EventDate-sizeS / 5);
+                line-height: ($EventDate-sizeS / 5);
+            }
+
+            .EventDate--small .EventDate-day {
+                font-size: ($EventDate-sizeS / 2.7);
+                line-height: ($EventDate-sizeS / 2.7);
+            }
+        }
+
+}
+
+:host-context(.EventTitle) .EventDate {
+
+    float: right;
+    margin-right: $gutter-padding;
+
+    @include media(tablet) {
+        margin-bottom: -1 * $EventDate-sizeM / 2;
+        float: left;
+    }
+
+    @include media(desktop) {
+        margin-bottom: -1 * $EventDate-sizeM / 2;
+        float: left;
+    }
+
+}

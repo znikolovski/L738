@@ -1,0 +1,13 @@
+mvn archetype:generate -B \
+     -DarchetypeCatalog=local  \
+     -DarchetypeGroupId=com.adobe.cq.spa.archetypes  \
+     -DarchetypeArtifactId=aem-spa-project-archetype  \
+     -DarchetypeVersion=1.0.3-SNAPSHOT \
+     -Dpackage=summitlab \
+     -DgroupId=com.adobe.summit \
+     -DartifactId=L738-spa-react \
+     -Dversion=0.0.1-SNAPSHOT \
+     -DprojectTitle="L738 SPA React App"  \
+     -DprojectName=L738-react  \
+     -DcomponentGroup="L738 React Content" \
+     -DoptionFrontend=react

@@ -1,0 +1,12 @@
+<header class="header">
+  <div class="wrapper">
+    <a class="link" routerLink={{homePath}}>
+      <h1 class="title">WKND<span class="title--inverse">_</span></h1>
+    </a>
+    <div class="header-tools" *ngIf=!home>
+      <a class="header-action" routerLink="{{homePath}}">
+        Back
+      </a>
+    </div>
+  </div>
+</header>

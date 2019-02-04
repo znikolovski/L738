@@ -1,0 +1,13 @@
+<div *ngIf="hasTitle" class="Promo">
+  <div class="Promo-image ">
+    <img [alt]="title" [src]="image.src" />
+  </div>
+  <div class="Promo-content">
+    <span class="Promo-sponsor">Sponsored</span>
+    <h3 class="Promo-title">{{title}}</h3>
+    <div class="Promo-description" [innerHTML]=description></div>
+    <div *ngIf="actionItems" className="Promo-actions">
+      <app-button *ngFor="let actionItem of actionItems" [url]="actionItem.url" [title]="actionItem.title"></app-button>
+    </div>
+  </div>
+</div>

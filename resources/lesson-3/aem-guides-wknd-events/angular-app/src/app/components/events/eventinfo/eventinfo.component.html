@@ -1,0 +1,30 @@
+<div class="EventInfo">
+  <div class="EventInfoWrapper">
+    <div class="EventTitle">
+      <app-eventdate [time]="eventProps.eventDate"></app-eventdate>
+      <h1 class="EventTitle-text">{{eventProps['jcr:title']}}</h1>
+    </div>
+    <div class="EventDetails">
+      <div class="EventDetail">
+        <div class="EventDetail-label">City</div>
+        <div class="EventDetail-value">{{eventProps.eventCity}}</div>
+      </div>
+      <div class="EventDetail">
+        <div class="EventDetail-label">Tickets</div>
+        <div class="EventDetail-value">{{eventProps.eventPrice}}</div>
+      </div>
+      <div class="EventDetail">
+        <div class="EventDetail-label">Time</div>
+        <div class="EventDetail-value">{{eventTime}}</div>
+      </div>
+      <div class="EventDetail">
+        <div class="EventDetail-label">Venue</div>
+        <div class="EventDetail-value">{{eventProps.eventVenue}}</div>
+      </div>
+      <div class="EventDetail">
+        <div class="EventDetail-label">Address</div>
+        <div class="EventDetail-value">{{eventProps.eventAddress}}</div>
+      </div>
+    </div>
+  </div>
+</div>

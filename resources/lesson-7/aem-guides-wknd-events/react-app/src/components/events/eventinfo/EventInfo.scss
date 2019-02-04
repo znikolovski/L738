@@ -1,0 +1,142 @@
+@import '../../../styles/shared';
+
+//Event Date
+$EventDate-backgroundColor: $color-black;
+$EventDate-boxShadow:  0px 20px 40px rgba(8, 8, 8, 0.25);
+$EventDate-sizeL: 120px;
+$EventDate-sizeM: 90px;
+$EventDate-sizeS: 60px;
+
+.EventInfo {
+   
+    background-color: $color-primary;
+    padding-bottom: $gutter-padding;
+    top: $header-height-big + $gutter-padding;
+    margin-left: 0;
+    margin-right: 0;
+ 
+
+    @include media(tablet) {
+        margin-bottom: $EventDate-sizeM / 2;
+        max-height: $eventinfo-height;
+        position: fixed;
+    }
+
+   @include media(desktop) {
+            /*
+            margin-bottom: $EventDate-sizeL / 2;
+            
+            margin-right: - $content-padding;
+            
+            */
+            width: 100%;
+            margin-left: - $content-padding;
+            max-width: $max-width + ($content-padding * 2);
+            max-height: $eventinfo-height;
+            position: fixed;
+            z-index: 99;
+    }
+
+
+.EventInfoWrapper {
+    @include content-area();
+
+    @include media(tablet) {
+        padding-left: $gutter-padding;
+        padding-right: $gutter-padding;
+    }
+
+}
+
+.EventTitle {
+
+    display: block;
+    width: 100%;
+    float: left;
+    padding-left: $gutter-padding;
+    padding-right: $gutter-padding;
+
+
+    &-text {
+        margin-top: 0px;
+        float: left;
+        font-size: 42px;
+        padding-right: $gutter-padding;
+        @include media (tablet, desktop) {
+            font-size: 60px;
+            margin-bottom: 24px;
+        }
+
+    }
+
+    &-tags {
+        list-style: none;
+        float: left;
+        font-size: 30px;
+        margin-top: 12px;
+
+        @include media (tablet, desktop) {
+            font-size: 40px;
+            margin-top: 20px;
+        }
+    }
+
+}
+
+.EventDetails {
+    width: 100%;
+    padding-left: $gutter-padding;
+    padding-right: $gutter-padding;
+
+        @include media (tablet, desktop) {
+            display: flex;
+            justify-content: space-between;
+        } 
+    }
+
+    .EventDetail {
+        width: 100%;
+        float: left;
+        margin-top:1.5em;
+
+        &-label {
+            text-transform: uppercase;
+            font-family: $font-sans;
+            font-weight: $font-weight-bold;
+        }
+    
+        &-value {
+            font-family: $font-serif;
+            font-size: 1rem;
+    
+            ul {
+                margin: 0;
+            }
+            li {
+                list-style: none;
+            }
+        }
+
+        @include media(mobile,tablet,desktop) {
+            float: unset;
+        }
+    }  
+
+    .EventDate {
+
+        float: right;
+        margin-right: $gutter-padding;
+
+        @include media(tablet) {
+            margin-bottom: -1 * $EventDate-sizeM / 2;
+            float: left;
+        }
+
+        @include media(desktop) {
+            margin-bottom: -1 * $EventDate-sizeM / 2;
+            float: left;
+        }
+       
+
+    }
+}

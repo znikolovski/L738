@@ -1,0 +1,6 @@
+# ui.apps/.gitignore
+# Ignore React generated client libraries from source control
+react-app
+
+# Ignore Angular generated client libraries from source control
+angular-app

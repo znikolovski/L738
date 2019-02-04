@@ -1,0 +1,6 @@
+# ui.apps/.gitignore
+# Ignore React generated client libraries from source control
+L738-react-react
+
+# Ignore Angular generated client libraries from source control
+L738-angular-angular
