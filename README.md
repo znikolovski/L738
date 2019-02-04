@@ -1,19 +1,19 @@
 
 # L738 - No Author Left Behind - Develop SPAs That Are Fast, Engaging, and Editable
 
+![Summit 2019](./images/1_summit-logo.jpg)
+
 ## Table of Contents
 
-* [Lab Overview](#lab-overview) 10 minutes
-* [Lesson 1 - SPA Starter Kit](#lesson-1---spa-starter-kit) 10 minutes
-* [Lesson 2 - Hello World](#lesson-2---hello-world) 5 minutes
-* [Lesson 3 - WKND Events](#lesson-3---wknd-events-app) 5 minutes
-* [Lesson 4 - JSON Contract](#lesson-4---json-contract) 5 minutes
-* [Lesson 5 - Front-end Development](#lesson-5---front-end-development) 15 minutes
-* [Lesson 6 - Back-end Development](#lesson-6---back-end-development) 10 minutes
-* [Lesson 7 - Navigation and Routing](#lesson-7---navigation-and-routing) 10 minutes (Discussion, no coding)
-* [Lesson 8 - Server Side Rendering](#lesson-8---server-side-rendering) 10 minutes
+* [Lab Overview](#lab-overview)
+* [Lesson 1 - SPA Starter Kit](#lesson-1---spa-starter-kit)
+* [Lesson 2 - Hello World](#lesson-2---hello-world)
+* [Lesson 3 - WKND Events](#lesson-3---wknd-events-app)
+* [Lesson 4 - JSON Contract](#lesson-4---json-contract)
+* [Lesson 5 - Front-end Development](#lesson-5---front-end-development)
+* [Lesson 6 - Back-end Development](#lesson-6---back-end-development)
+* [Lesson 7 - Server Side Rendering](#lesson-7---server-side-rendering)
 * [Next Steps](#next-steps)
-* [Appendix](#appendix)
 
 
 
@@ -47,7 +47,7 @@ A local author instance of AEM should be installed running locally on port 4502
 
 #### IDE
 
-The lab will use Visual Studio Code as the IDE and screenshots will be of Visual Studio Code. IntelliJ, Eclipse are also perfectly valid IDEs to work in. 
+The lab will use Visual Studio Code as the IDE and screenshots will be of Visual Studio Code. IntelliJ, Eclipse are also great IDEs to work with. 
 
 See [Set up a Local AEM Development Environment](https://helpx.adobe.com/experience-manager/kt/platform-repository/using/local-aem-dev-environment-article-setup.html) for detailed instructions.
 
@@ -146,7 +146,7 @@ To achieve this integration two tools will be used:
 
 2. Open **Visual Studio Code** IDE
 3. Click **Open Folder** and navigate to **Desktop** > **resources** > **lesson-1** > **L738-spa-react**
-![L738-spa-react](./images/l738-spa-react-project.png)
+![L738-spa-react](./images/lesson-1/l738-spa-react-project.png)
 4. There are 5 folders in the project that represent individual Maven modules
     * **all** Combines all modules in a single package
     * **core**: OSGi bundle containing Java code
@@ -164,7 +164,7 @@ To achieve this integration two tools will be used:
 
 1. In **Visual Studio Code** from menu bar > **Terminal** > **New Terminal**
 
-    ![Open terminal](./images/open-terminal.png)
+    ![Open terminal](./images/lesson-1/open-terminal.png)
 
 2. The terminal should default to be in the directory: `~/Desktop/resources/lesson-1/L738-spa-react`.
 3. Run the following command in the terminal:
@@ -197,11 +197,11 @@ To achieve this integration two tools will be used:
     * Password: **admin**
 6. Click **Tools** > **Deployment** > **Packages** to navigate to CRX Package Manager:
 
-    ![Package Manager](./images/package-manager.png)
+    ![Package Manager](./images/lesson-1/package-manager.png)
 
 7. You should see that the package has been deployed:
 
-    ![L738 React Package](./images/deployed-packagesl738-react.png)
+    ![L738 React Package](./images/lesson-1/deployed-packagesl738-react.png)
 
 
 ### ![Angular](./images/angular-logo.png) Exercise 1.1 - Open the L738 SPA Angular Project
@@ -226,7 +226,7 @@ To achieve this integration two tools will be used:
 
 2. Open **Visual Studio Code** IDE
 3. Click **Open Folder** and navigate to **Desktop** > **resources** > **lesson-1** > **L738-spa-angular**
-![L738-spa-angular](./images/l738-spa-angular-project.png)
+![L738-spa-angular](./images/lesson-1/L738-spa-angular-project.png)
 4. There are 5 folders in the project that represent individual Maven modules
     * **all** Combines all modules in a single package
     * **core**: OSGi bundle containing Java code
@@ -244,7 +244,7 @@ To achieve this integration two tools will be used:
 
 1. In **Visual Studio Code** from menu bar > **Terminal** > **New Terminal**
 
-    ![Open terminal](./images/open-terminal.png)
+    ![Open terminal](./images/lesson-1/open-terminal.png)
 
 2. The terminal should default to be in the directory: `~/Desktop/resources/lesson-1/L738-spa-angular`.
 3. Run the following command in the terminal:
@@ -277,11 +277,11 @@ To achieve this integration two tools will be used:
     * Password: **admin**
 6. Click **Tools** > **Deployment** > **Packages** to navigate to CRX Package Manager:
 
-    ![Package Manager](./images/package-manager.png)
+    ![Package Manager](./images/lesson-1/package-manager.png)
 
 7. You should see that the package has been deployed:
 
-    ![L738 React Package](./images/deployed-packagesl738-angular.png)
+    ![L738 React Package](./images/lesson-1/deployed-packagesl738-angular.png)
 
 ## Lesson 2 - Hello World
 
@@ -295,13 +295,13 @@ To achieve this integration two tools will be used:
 
 The goal of the SPA Editor is to allow marketers to be able to make in-context edits to a Single Page Application. In this lesson we will trace how authored content is persisted to the JCR and then exposed as JSON. We will then look at how the SPA inspects the JSON to map the data model to a front-end component. The **Text** component which is included out of the box by the SPA Starter Kit will be used.
 
-![Map to](./images/mapto-diagram.png)
+![Map to](./images/lesson-2/mapto-diagram.png)
 
 #### Exercise 2.1 - Add a text component to the page and author a new message
 
 1. From the AEM Start Menu [http://localhost:4502/aem/start.html](http://localhost:4502/aem/start.html) Navigate to **Sites**.
 
-    ![Sites icon](./images/sites-icon.png)
+    ![Sites icon](./images/lesson-2/sites-icon.png)
 
 2. ![React Logo](./images/react-logo.png) Navigate to **L738-react** > **en** > **home** and open the page using the Sites Editor:
 
@@ -451,7 +451,7 @@ In this lesson we will install the WKND Events App. This application displays a 
 
 1. In **Visual Studio Code** from menu bar > **Terminal** > **New Terminal**
 
-    ![Open terminal](./images/open-terminal.png)
+    ![Open terminal](./images/lesson-1/open-terminal.png)
 
 2. The terminal should default to be in the directory: `~/Desktop/resources/lesson-3/aem-guides-wknd-events`.
 3. Run the following command in the terminal:
@@ -485,7 +485,7 @@ In this lesson we will install the WKND Events App. This application displays a 
 
 1. From the AEM Start Menu [http://localhost:4502/aem/start.html](http://localhost:4502/aem/start.html) Navigate to **Sites**.
 
-    ![Sites icon](./images/sites-icon.png)
+    ![Sites icon](./images/lesson-2/sites-icon.png)
 
 2. ![React Logo](./images/react-logo.png) Navigate to **WKND Events** > **React** > **Home** and open the page using the Sites Editor:
 
@@ -874,7 +874,7 @@ An AEM component is needed in order to allow a content author to add new version
 
 1. In **Visual Studio Code** from menu bar > **Terminal** > **New Terminal**
 
-    ![Open terminal](./images/open-terminal.png)
+    ![Open terminal](./images/lesson-1/open-terminal.png)
 
 2. Ensure you are in the `aem-guides-wknd-events` directory. You may need to run `$ cd ..` to navigate back to the root of the project.
 3. Run the following command in the terminal:
@@ -918,93 +918,137 @@ An AEM component is needed in order to allow a content author to add new version
 
 The lesson provides examples of Server-Side Rendered SPA and exposes the main advantages of such an architecture. Compare different architectures and their trade-off.
 
-![SSR](./images/server-side-rendering-cms-driven.png)
+![SSR](./images/lesson-7/server-side-rendering-cms-driven.png)
 
 ### Pre-Exercise 7 - Open completed WKND Events React code base
 
 The _WKND - events_ project only contains a **React** Server-Side environment. To proceed with the current exercise, please start with the provided initial content for chapter 7 located at:
 
-**Desktop** > **resources** > **lesson-7** > **aem-guides-wknd-events-START**. Complete the final exercise with that code base.
+**Desktop** > **resources** > **lesson-7** > **aem-guides-wknd-events-L7**. Complete the final exercise with this code base.
 
-#### Exercise 7.1 Configure the Server-Side rendering
+### Exercise 7.1 - Include the Server-Side rendering resource
 
-1. Modify the page component HTL template [a,b]
-2. Start the local NODE.js server [c]
-3. Request the page from your browser
-4. Using a web browser, navigate to one of the pages of the app
+1. In **Visual Studio Code**, with the **WKND Events** project open, navigate to **ui.apps** > **src** > **main** > **content** > **jcr_root** > **apps** > **wknd-events** > **components** > **structure** > **page**
 
-a. Display the content of the HTL template for the body of the page component by navigating to the following URL
-```
-http://localhost:4502/crx/de/index.jsp#/apps/wknd-events/components/structure/page/body.html
-```
+![page location](./images/lesson-7/body-script-location.png)
 
-b. Modify the content of the template as follow
-```
-<app-root id="root">
-    <sly data-sly-resource="${resource @ resourceType='cq/remote/content/renderer'}" />
-</app-root>
-```
+2. Open the file **body.html** beneath the **page** folder.
+3. Modify the content of the template to un-comment the `data-sly-resource`:
 
-c. In your terminal, navigate inside the _react-app_ directory and execute the command to start the local _Node_ server
-```
-npm run start:server
-```
+    ```
+    <app-root id="root">
+        <sly data-sly-resource="${resource @ resourceType='cq/remote/content/renderer'}" />
+    </app-root>
+    ```
+4. Open a terminal and ensure you are in the `aem-guides-wknd-events` directory.
+3. Run the following command in the terminal:
 
-d. Configure the AEM Remote HTML Renderer Servlet
+    ```
+    $ mvn -PautoInstallPackage clean install
+    ```
+    This will build and deploy the application to a local instance of AEM running at [http://localhost:4502](http://localhost:4502).
 
-5. Navigate to the System OSGi Configuration console (http://localhost:4502/system/console/configMgr)
-6. Look for the configuration named `Remote Content Renderer - Configuration Factory`
-7. Create a new configuration and set the after-mentioned field as follow
+    ```
+    [INFO] ------------------------------------------------------------------------
+    [INFO] Reactor Summary:
+    [INFO]
+    [INFO] aem-guides-wknd-events ............................. SUCCESS [  0.357 s]
+    [INFO] WKND Events - Core ................................. SUCCESS [  2.692 s]
+    [INFO] WKND Events - React App ............................ SUCCESS [ 59.979 s]
+    [INFO] WKND Events - Angular App .......................... SUCCESS [ 32.656 s]
+    [INFO] WKND Events - UI content ........................... SUCCESS [  5.754 s]
+    [INFO] WKND Events - UI apps .............................. SUCCESS [  1.213 s]
+    [INFO] ------------------------------------------------------------------------
+    [INFO] BUILD SUCCESS
+    [INFO] ------------------------------------------------------------------------
+    ```
 
-```
-Content path pattern=/content/wknd-events/react(.*)
-```
+### Exercise 7.2 - Start the local Node Server
 
-8. In your browser, display the Server-Side rendered home page of the SPA by navigating to http://localhost:4502/content/wknd-events/react/home.html 
-9. Open the developer console, open the Network tab (alt+cmd+i)
-10. Activate the filter called _XHR_
-11. Refresh the page
+1. Open a terminal window and navigate to **aem-guides-wknd-events** > **react-app** directory.
+2. Run the following command to start the server:
 
-![No model request](./images/wknd-events-ssr-network-no-model-request.png)
+    ```
+    $ npm run start:server
+    ```
 
-Note that there is no request to any model which would implay an entry for a URL ending with a the selector and extension such as _.model.json_
+    ```
+    Debugger listening on ws://127.0.0.1:9229/3319c007-6e3c-4024-ae4d-cd1c9706764d
+    For help, see: https://nodejs.org/en/docs/inspector
+    Example exapp listening on port 4200!
+    ```
 
-12. Open the page source of the page (alt+cmd+u or cmd+click > View Page Source)
-13. In the page source, look for the tag with the id *__INITIAL_STATE__*
+### Exercise 7.3 - Configure the AEM Remote HTML Renderer Servlet
 
-![SSR Model Initial State](./images/wknd-events-ssr-json-model-initial-state.png)
+1. Open a new browser tab and navigate to [http://localhost:4502/system/console/configMgr](http://localhost:4502/system/console/configMgr).
+2. Press `control`+`f` to search for a configuration named **Remote Content Renderer - Configuration Factory**
+3. Click the `+` button next to the Factory to create a new configuration:
+
+    ![add new configuration](./images/lesson-7/add-config.png)
+4. Replace the **Content path pattern** with the following:
+
+    ```
+    /content/wknd-events/react(.*)
+    ```
+
+    ![remote content configuration](./images/lesson-7/remote-content-config.png)
+5. Save your changes.
+
+### Exercise 7.4 - View Server Side Rendering
+
+1. In the browser navigate to the React Home page: [http://localhost:4502/editor.html/content/wknd-events/react/home.html](http://localhost:4502/editor.html/content/wknd-events/react/home.html)
+2. Click the Page Properties icon > **View as Published** to view the page outside of the AEM editor:
+
+    ![view as published](./images/lesson-7/view-published.png)
+
+    This should open a new tab with the following URL: [http://localhost:4502/content/wknd-events/react/home.html?wcmmode=disabled](http://localhost:4502/content/wknd-events/react/home.html?wcmmode=disabled)
+3. Open the browser's developer tools by clicking the 3 vertical dots in the upper right-hand corner > **More Tools** > **Developer Tools**
+
+    ![Open Developer Tools](./images/lesson-7/open-dev-tools.png)
+4. In the Developer Tool panel click the **Network** tab and then the **XHR** tab:
+
+    ![XHR Network Tab](./images/lesson-7/network-tab.png)
+5. Refresh the page and notice that there is no **XHR** calls. This is because the app is initially populated by Server-side JSON.
+6. Right + Click the page and click **View Page Source**:
+
+    ![View Page Source](./images/lesson-7/view-page-src.png)
+7. In the page source search for the tag `__INITIAL_STATE__` to see the server-side JSON:
+
+    ```
+    ...
+     <script type="application/json" id="__INITIAL_STATE__">
+            {"rootModel":{"decoratedProperties":{"jcr:title":"React App"},"title":"React App",":path":"/content/wknd-events/react",":hierarchyType":"page",":children":{"/content/wknd-events/react/home":{"decoratedProperties":{"jcr:title":"Home"},"image":{"lazyEnabled":true,"widths":[],":type":"wknd-events/components/content/image"},"title":"Home",":path":"/content/wknd-events/react/home",":hierarchyType":"page",":type":"wknd-events/components/structure/page",":items":{"root":{"columnCount":12,"columnClassNames":{"responsivegrid":"aem-GridColumn aem-GridColumn--default--12"},"gridClassNames":"aem-Grid aem-Grid--12 
+    ...
+    ```
 
 The page source exposes a source code that hasn't yet been manipulated by the SPA script. Note that the server-side script has dumped the JSON model object used to generate the initial content of the app. Finally, the frontend script present in the browser synchronizes itself with the provided JSON model object.
 
-##### Exercise 8.1.1 Server-Side Rendering Fallback
+#### Exercise 7.5 - Server-Side Rendering Fallback
 
 Let's simulate a failure of the remote node server.
 
-1. Kill the _Node_ server instance (ctrl+c)
-2. Refresh the page source
+1. Return to **Visual Studio Code** or wherever you started **Node Server**. 
+2. Stop the **Node Server** by pressing: `control`+`c`.
 
-![SSR failure - Page source](./images/wknd-events-ssr-page-source-error.png)
+    ```
+    Debugger listening on ws://127.0.0.1:9229/3319c007-6e3c-4024-ae4d-cd1c9706764d
+    For help, see: https://nodejs.org/en/docs/inspector
+    Example exapp listening on port 4200!
+    ^C
+    ```
+2. Return to the browser. Open [http://localhost:4502/content/wknd-events/react/home.html?wcmmode=disabled](http://localhost:4502/content/wknd-events/react/home.html?wcmmode=disabled). Refresh the page.
+3. Notice that the app continues to work and there is now an XHR call for `react.model.json`
 
-Note that in the `<app-root id="root">` tag is displayed a comment that contains the error code and message.
-
-3. Refresh the page
-
-![SSR failure - Network model request](./images/wknd-events-ssr-network-model-request.png)
-
-Note that a request to the model of the app is sent to the AEM server. The client script is has not been synchronized and initialize itself independently from the server.
+    ![XHR Fallback](./images/lesson-7/xhr-fallback.png)
 
 ## Next Steps
 
 Follow the tutorial, read the public documentation, use the starter kit and follow the evolution of the developers' experimental project.
 
-https://helpx.adobe.com/experience-manager/kt/sites/using/getting-started-spa-wknd-tutorial-develop.html
-https://helpx.adobe.com/experience-manager/kt/sites/using/spa-editor-helloworld-tutorial-use.html
-https://github.com/adobe/aem-spa-project-archetype
-https://github.com/adobe/aem-sample-we-retail-journal
+### Additional Resources:
 
-
-## Additional Resources
-
-## Appendix
-
-An appendix section is also a nice to have and include reference links to documentation.
+* SPA Editor Feature Video - [https://helpx.adobe.com/experience-manager/kt/sites/using/spa-editor-framework-feature-video-use.html](https://helpx.adobe.com/experience-manager/kt/sites/using/spa-editor-framework-feature-video-use.html)
+* SPA Editor - HelloWorld Tutorial - [https://helpx.adobe.com/experience-manager/kt/sites/using/spa-editor-helloworld-tutorial-use.html](https://helpx.adobe.com/experience-manager/kt/sites/using/spa-editor-helloworld-tutorial-use.html)
+* SPA Editor - WKND Events Tutorial - [https://helpx.adobe.com/experience-manager/kt/sites/using/getting-started-spa-wknd-tutorial-develop.html](https://helpx.adobe.com/experience-manager/kt/sites/using/getting-started-spa-wknd-tutorial-develop.html)
+* SPA Editor Starter Kit - [https://github.com/adobe/aem-spa-project-archetype](https://github.com/adobe/aem-spa-project-archetype)
+* We.Retail Journal Sample - [https://github.com/adobe/aem-sample-we-retail-journal](https://github.com/adobe/aem-sample-we-retail-journal)
