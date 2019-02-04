@@ -115,7 +115,7 @@ At a high level, the integration approach is as follows:
 2. The compiled SPA, the production distribution of CSS and JS, is copied into the **ui.apps** module as an AEM [client library](https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/clientlibs.html)
 3. The **ui.apps** is deployed to AEM as part of an AEM package. 
 
-![build deploy high level](./images/build-deploy-highlevel.png)
+![build deploy high level](./images/lesson-1/build-deploy-highlevel.png)
 
 The concept is similar to the integration of the **core** Java bundle, where the Java bundle is compiled into a jar file that is embedded into the **ui.apps** module and deployed to AEM as an AEM package.
 
