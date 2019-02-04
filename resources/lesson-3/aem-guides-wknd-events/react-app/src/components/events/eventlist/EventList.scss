@@ -1,0 +1,131 @@
+@import '../../../styles/shared';
+
+//Event Image Heights
+$eventImageL: 500px;
+$eventImageM: 450px;
+$eventImageS: 375px;
+
+.EventList {
+    
+    margin: 0 auto;
+    float: unset;
+    
+
+    @include media( tablet, desktop) {
+        float: left;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.Event {
+    display: block;
+    position: relative;
+    overflow: hidden;
+
+    @include media(tablet, desktop) {
+        display: flex;
+    }
+
+    &--reverse {
+        flex-flow: row-reverse;
+    }
+}
+
+.Event-column {
+    flex: 50%;
+   
+    .Image {
+        padding: 0px !important;
+        height: 100%;
+        
+
+        @include media(tablet) {
+            min-height: $eventImageM;
+        }
+
+        @include media(desktop) {
+            min-height: $eventImageL;
+        }
+
+        img {
+            object-fit: cover;
+            height: 100%;
+            min-height: $eventImageS;
+        }
+    }
+}
+
+.EventDetails {
+    height: 100%;
+}
+
+.EventDetails-wrapper {
+    padding: 1.5em;
+
+    @include media(tablet) {
+        margin-top: 10px;
+        margin-left: 60px;
+    }
+    @include media(desktop) {
+        padding: 1.5em;
+        margin-top: 60px;
+        margin-left: 60px;
+    }
+}
+
+.Event--reverse .EventDetails-wrapper {
+    @include media(tablet) {
+        margin-left: 0px;
+        margin-right: 60px;
+    }
+
+    @include media(desktop) {
+        margin-left: 0px;
+        margin-right: 60px;
+    }
+}
+
+.EventDetails-title {
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.EventDetails-city {
+    font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica";
+    font-size: 18px;
+    font-weight: 500;
+    color: $color-secondary;
+    margin-top: 0em;
+    margin-bottom: 0.25em;
+}
+
+.EventDetails-description {
+    margin-top: 30px;
+    margin-bottom: 24px;
+    font-size: 18px;
+    font-weight: 500;
+    color: $color-secondary;
+    
+    @include media (desktop) {
+        margin-top: 60px;
+    }
+}
+
+.Event .EventDate {
+    position:absolute;
+    margin: auto;
+    right: 0;
+    top: 310px;
+
+    @include media(medium) {
+        top: $eventImageM - ($EventDate-sizeM / 2);
+    } 
+
+    @include media(tablet, desktop) {
+        left:0;
+        top: 0;
+        bottom: 0;
+    }
+}

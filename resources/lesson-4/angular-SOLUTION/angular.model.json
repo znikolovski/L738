@@ -1,0 +1,310 @@
+{
+    "decoratedProperties": {
+        "jcr:title": "Angular App"
+    },
+    "title": "Angular App",
+    ":path": "/content/wknd-events/angular",
+    ":hierarchyType": "page",
+    ":children": {
+        "/content/wknd-events/angular/home": {
+            "decoratedProperties": {
+                "jcr:title": "Home"
+            },
+            "title": "Home",
+            ":path": "/content/wknd-events/angular/home",
+            ":hierarchyType": "page",
+            ":type": "wknd-events/components/structure/page",
+            ":items": {
+                "root": {
+                    "columnCount": 12,
+                    "columnClassNames": {
+                        "responsivegrid": "aem-GridColumn aem-GridColumn--default--12"
+                    },
+                    "gridClassNames": "aem-Grid aem-Grid--12 aem-Grid--default--12",
+                    ":items": {
+                        "responsivegrid": {
+                            "columnCount": 12,
+                            "columnClassNames": {
+                                "promo": "aem-GridColumn aem-GridColumn--default--12",
+                                "text": "aem-GridColumn aem-GridColumn--default--12"
+                            },
+                            "gridClassNames": "aem-Grid aem-Grid--12 aem-Grid--default--12",
+                            ":items": {
+                                "text": {
+                                    "text": "<h1>Welcome to WKND Events!</h1>\n<p>This is some mock JSON.</p>\n",
+                                    "richText": true,
+                                    ":type": "wknd-events/components/content/text"
+                                },
+                                "promo": {
+                                    "offerText": "$2000 / Month",
+                                    "actionItems": [
+                                        {
+                                            "title": "Learn More",
+                                            "url": "/content/wknd-events/angular/home/wknd-free-pass.html"
+                                        }
+                                    ],
+                                    "description": "<p>Get a Monthly package handcrafted for <b>you</b>. Secret Shows, Special Discounts, limited access art shows. Discover your city events and venues in a smarter way, relevant to your interests.</p>\r\n",
+                                    "title": "Wknds Free Pass",
+                                    "image": {
+                                        "src": "/content/wknd-events/angular/home/_jcr_content/root/responsivegrid/promo.coreimg.jpeg/1549076604849.jpeg",
+                                        "srcUriTemplate": "/content/wknd-events/angular/home/_jcr_content/root/responsivegrid/promo.coreimg{.width}.jpeg/1549076604849.jpeg",
+                                        "areas": [],
+                                        "uuid": "135c380d-c6b5-4035-96a3-d18ef3556327",
+                                        "lazyEnabled": false,
+                                        "widths": [],
+                                        ":type": "wknd-events/components/content/image"
+                                    },
+                                    "actionsEnabled": true,
+                                    "linkURL": "/content/wknd-events/angular/home/wknd-free-pass.html",
+                                    "imageLinkHidden": false,
+                                    "titleLinkHidden": false,
+                                    ":type": "wknd-events/components/content/promo"
+                                }
+                            },
+                            ":itemsOrder": [
+                                "text",
+                                "promo"
+                            ],
+                            ":type": "wcm/foundation/components/responsivegrid"
+                        }
+                    },
+                    ":itemsOrder": [
+                        "responsivegrid"
+                    ],
+                    ":type": "wcm/foundation/components/responsivegrid"
+                }
+            },
+            ":itemsOrder": [
+                "root"
+            ]
+        },
+        "/content/wknd-events/angular/home/first-article": {
+            "decoratedProperties": {
+                "jcr:description": "Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. ",
+                "jcr:title": "First Article"
+            },
+            "title": "First Article",
+            ":path": "/content/wknd-events/angular/home/first-article",
+            ":hierarchyType": "page",
+            ":type": "wknd-events/components/structure/page",
+            ":items": {
+                "root": {
+                    "columnCount": 12,
+                    "columnClassNames": {
+                        "responsivegrid": "aem-GridColumn aem-GridColumn--default--12"
+                    },
+                    "gridClassNames": "aem-Grid aem-Grid--12 aem-Grid--default--12",
+                    ":items": {
+                        "responsivegrid": {
+                            "columnCount": 12,
+                            "columnClassNames": {
+                                "text": "aem-GridColumn aem-GridColumn--default--12",
+                                "responsivegrid": "aem-GridColumn aem-GridColumn--tablet--12 aem-GridColumn--offset--tablet--0 aem-GridColumn--tablet--none aem-GridColumn--default--8 aem-GridColumn--offset--default--0 aem-GridColumn--default--none aem-GridColumn--phone--12 aem-GridColumn--offset--phone--0 aem-GridColumn--phone--none",
+                                "responsivegrid_399366997": "aem-GridColumn aem-GridColumn--tablet--12 aem-GridColumn--offset--tablet--0 aem-GridColumn--tablet--none aem-GridColumn--default--4 aem-GridColumn--offset--default--0 aem-GridColumn--default--none aem-GridColumn--phone--12 aem-GridColumn--offset--phone--0 aem-GridColumn--phone--none"
+                            },
+                            "gridClassNames": "aem-Grid aem-Grid--12 aem-Grid--default--12 aem-Grid--tablet--12 aem-Grid--phone--12",
+                            ":items": {
+                                "text": {
+                                    "text": "<h1>First Article</h1>\n",
+                                    "richText": true,
+                                    ":type": "wknd-events/components/content/text"
+                                },
+                                "responsivegrid": {
+                                    "columnCount": 12,
+                                    "columnClassNames": {
+                                        "image": "aem-GridColumn aem-GridColumn--tablet--12 aem-GridColumn--default--8 aem-GridColumn--phone--8",
+                                        "text_279202033": "aem-GridColumn aem-GridColumn--tablet--12 aem-GridColumn--default--8 aem-GridColumn--phone--8",
+                                        "text": "aem-GridColumn aem-GridColumn--tablet--12 aem-GridColumn--default--8 aem-GridColumn--phone--8"
+                                    },
+                                    "gridClassNames": "aem-Grid aem-Grid--default--8 aem-Grid--tablet--12 aem-Grid--phone--12",
+                                    ":items": {
+                                        "text": {
+                                            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu.</p>\n",
+                                            "richText": true,
+                                            ":type": "wknd-events/components/content/text"
+                                        },
+                                        "image": {
+                                            "alt": "California highway",
+                                            "title": "California Highway",
+                                            "src": "/content/wknd-events/angular/home/first-article/_jcr_content/root/responsivegrid/responsivegrid/image.coreimg.jpeg/1549076605971.jpeg",
+                                            "srcUriTemplate": "/content/wknd-events/angular/home/first-article/_jcr_content/root/responsivegrid/responsivegrid/image.coreimg{.width}.jpeg/1549076605971.jpeg",
+                                            "areas": [],
+                                            "uuid": "122ca431-19c3-4608-9bc7-d2527ac009f5",
+                                            "lazyEnabled": false,
+                                            "widths": [],
+                                            ":type": "wknd-events/components/content/image"
+                                        },
+                                        "text_279202033": {
+                                            "text": "<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris, quis sollicitudin sapien justo in libero. Vestibulum mollis mauris enim.&nbsp;</p>\n<p>Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque, nunc ac egestas consequat, odio nibh euismod nulla, eget auctor orci nibh vel nisi. Aliquam erat volutpat. Mauris vel neque sit amet nunc gravida congue sed sit amet purus. Quisque lacus quam, egestas ac tincidunt a, lacinia vel velit.&nbsp;</p>\n",
+                                            "richText": true,
+                                            ":type": "wknd-events/components/content/text"
+                                        }
+                                    },
+                                    ":itemsOrder": [
+                                        "text",
+                                        "image",
+                                        "text_279202033"
+                                    ],
+                                    ":type": "wcm/foundation/components/responsivegrid"
+                                },
+                                "responsivegrid_399366997": {
+                                    "columnCount": 12,
+                                    "columnClassNames": {
+                                        "text_1183005514": "aem-GridColumn aem-GridColumn--tablet--12 aem-GridColumn--default--4 aem-GridColumn--phone--4",
+                                        "text": "aem-GridColumn aem-GridColumn--tablet--12 aem-GridColumn--default--4 aem-GridColumn--phone--4"
+                                    },
+                                    "gridClassNames": "aem-Grid aem-Grid--default--4 aem-Grid--tablet--12 aem-Grid--phone--12",
+                                    ":items": {
+                                        "text": {
+                                            "text": "<h4>Sidebar heading</h4>\n",
+                                            "richText": true,
+                                            ":type": "wknd-events/components/content/text"
+                                        },
+                                        "text_1183005514": {
+                                            "text": "<p>Morbi euismod magna ac lorem rutrum elementum.</p>\n",
+                                            "richText": true,
+                                            ":type": "wknd-events/components/content/text"
+                                        }
+                                    },
+                                    ":itemsOrder": [
+                                        "text",
+                                        "text_1183005514"
+                                    ],
+                                    ":type": "wcm/foundation/components/responsivegrid"
+                                }
+                            },
+                            ":itemsOrder": [
+                                "text",
+                                "responsivegrid",
+                                "responsivegrid_399366997"
+                            ],
+                            ":type": "wcm/foundation/components/responsivegrid"
+                        }
+                    },
+                    ":itemsOrder": [
+                        "responsivegrid"
+                    ],
+                    ":type": "wcm/foundation/components/responsivegrid"
+                }
+            },
+            ":itemsOrder": [
+                "root"
+            ]
+        },
+        "/content/wknd-events/angular/home/wknd-free-pass": {
+            "decoratedProperties": {
+                "jcr:title": "WKND Free Pass"
+            },
+            "title": "WKND Free Pass",
+            ":path": "/content/wknd-events/angular/home/wknd-free-pass",
+            ":hierarchyType": "page",
+            ":type": "wknd-events/components/structure/page",
+            ":items": {
+                "root": {
+                    "columnCount": 12,
+                    "columnClassNames": {
+                        "responsivegrid": "aem-GridColumn aem-GridColumn--default--12"
+                    },
+                    "gridClassNames": "aem-Grid aem-Grid--12 aem-Grid--default--12",
+                    ":items": {
+                        "responsivegrid": {
+                            "columnCount": 12,
+                            "columnClassNames": {
+                                "text": "aem-GridColumn aem-GridColumn--default--12",
+                                "responsivegrid": "aem-GridColumn aem-GridColumn--tablet--12 aem-GridColumn--offset--tablet--0 aem-GridColumn--tablet--none aem-GridColumn--default--8 aem-GridColumn--offset--default--0 aem-GridColumn--default--none aem-GridColumn--phone--12 aem-GridColumn--offset--phone--0 aem-GridColumn--phone--none",
+                                "responsivegrid_399366997": "aem-GridColumn aem-GridColumn--tablet--12 aem-GridColumn--offset--tablet--0 aem-GridColumn--tablet--none aem-GridColumn--default--4 aem-GridColumn--offset--default--0 aem-GridColumn--default--none aem-GridColumn--phone--12 aem-GridColumn--offset--phone--0 aem-GridColumn--phone--none"
+                            },
+                            "gridClassNames": "aem-Grid aem-Grid--12 aem-Grid--default--12 aem-Grid--tablet--12 aem-Grid--phone--12",
+                            ":items": {
+                                "text": {
+                                    "text": "<h1>WKND FREE Pass</h1>\n",
+                                    "richText": true,
+                                    ":type": "wknd-events/components/content/text"
+                                },
+                                "responsivegrid": {
+                                    "columnCount": 12,
+                                    "columnClassNames": {
+                                        "image": "aem-GridColumn aem-GridColumn--phone--12 aem-GridColumn--offset--phone--0 aem-GridColumn--phone--none aem-GridColumn--tablet--12 aem-GridColumn--default--8",
+                                        "text_279202033": "aem-GridColumn aem-GridColumn--phone--12 aem-GridColumn--offset--phone--0 aem-GridColumn--phone--none aem-GridColumn--tablet--12 aem-GridColumn--default--8",
+                                        "text": "aem-GridColumn aem-GridColumn--phone--12 aem-GridColumn--offset--phone--0 aem-GridColumn--phone--none aem-GridColumn--tablet--12 aem-GridColumn--default--8"
+                                    },
+                                    "gridClassNames": "aem-Grid aem-Grid--default--8 aem-Grid--tablet--12 aem-Grid--phone--12",
+                                    ":items": {
+                                        "text": {
+                                            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu.</p>\n",
+                                            "richText": true,
+                                            ":type": "wknd-events/components/content/text"
+                                        },
+                                        "image": {
+                                            "alt": "Free Pass",
+                                            "title": "$200 value..for free!",
+                                            "src": "/content/wknd-events/angular/home/wknd-free-pass/_jcr_content/root/responsivegrid/responsivegrid/image.coreimg.jpeg/1549076604849.jpeg",
+                                            "srcUriTemplate": "/content/wknd-events/angular/home/wknd-free-pass/_jcr_content/root/responsivegrid/responsivegrid/image.coreimg{.width}.jpeg/1549076604849.jpeg",
+                                            "areas": [],
+                                            "uuid": "135c380d-c6b5-4035-96a3-d18ef3556327",
+                                            "lazyEnabled": false,
+                                            "widths": [],
+                                            ":type": "wknd-events/components/content/image"
+                                        },
+                                        "text_279202033": {
+                                            "text": "<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris, quis sollicitudin sapien justo in libero. Vestibulum mollis mauris enim.&nbsp;</p>\n<p>Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque, nunc ac egestas consequat, odio nibh euismod nulla, eget auctor orci nibh vel nisi. Aliquam erat volutpat. Mauris vel neque sit amet nunc gravida congue sed sit amet purus. Quisque lacus quam, egestas ac tincidunt a, lacinia vel velit.&nbsp;</p>\n",
+                                            "richText": true,
+                                            ":type": "wknd-events/components/content/text"
+                                        }
+                                    },
+                                    ":itemsOrder": [
+                                        "text",
+                                        "image",
+                                        "text_279202033"
+                                    ],
+                                    ":type": "wcm/foundation/components/responsivegrid"
+                                },
+                                "responsivegrid_399366997": {
+                                    "columnCount": 12,
+                                    "columnClassNames": {
+                                        "text_1183005514": "aem-GridColumn aem-GridColumn--phone--12 aem-GridColumn--offset--phone--0 aem-GridColumn--phone--none aem-GridColumn--tablet--12 aem-GridColumn--default--4",
+                                        "text": "aem-GridColumn aem-GridColumn--phone--12 aem-GridColumn--offset--phone--0 aem-GridColumn--phone--none aem-GridColumn--tablet--12 aem-GridColumn--default--4"
+                                    },
+                                    "gridClassNames": "aem-Grid aem-Grid--default--4 aem-Grid--tablet--12 aem-Grid--phone--12",
+                                    ":items": {
+                                        "text": {
+                                            "text": "<h4>Great value!</h4>\n",
+                                            "richText": true,
+                                            ":type": "wknd-events/components/content/text"
+                                        },
+                                        "text_1183005514": {
+                                            "text": "<p>Morbi euismod magna ac lorem rutrum elementum.</p>\n",
+                                            "richText": true,
+                                            ":type": "wknd-events/components/content/text"
+                                        }
+                                    },
+                                    ":itemsOrder": [
+                                        "text",
+                                        "text_1183005514"
+                                    ],
+                                    ":type": "wcm/foundation/components/responsivegrid"
+                                }
+                            },
+                            ":itemsOrder": [
+                                "text",
+                                "responsivegrid",
+                                "responsivegrid_399366997"
+                            ],
+                            ":type": "wcm/foundation/components/responsivegrid"
+                        }
+                    },
+                    ":itemsOrder": [
+                        "responsivegrid"
+                    ],
+                    ":type": "wcm/foundation/components/responsivegrid"
+                }
+            },
+            ":itemsOrder": [
+                "root"
+            ]
+        }
+    },
+    ":type": "wknd-events/components/structure/app",
+    ":items": {},
+    ":itemsOrder": []
+}

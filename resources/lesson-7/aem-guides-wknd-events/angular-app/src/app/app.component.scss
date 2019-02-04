@@ -1,0 +1,15 @@
+@import '../styles/shared';
+
+:host-context {
+    @include content-area();
+    background-color: $color-white;
+    padding-top: 0px;
+    height: 100%;
+    overflow: hidden;
+    display: block;
+  
+    /*
+    @include media(desktop) {
+        min-height: calc(100vh - #{$header-height-big + $gutter-padding});
+    }*/
+  }

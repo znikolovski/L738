@@ -1,0 +1,97 @@
+@import "~src/styles/shared";
+
+$icon-size-lg: 46px;
+$icon-size-md: 40px;
+$icon-size-sm: 32px;
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left:0;
+  z-index: 99;
+
+  .wrapper {
+    height: $header-height;
+    @include content-area();
+    display: flex;
+    justify-content: space-between;
+    background-color: $color-primary;
+
+      @include media(tablet,desktop) {
+        height: $header-height-big;
+      }
+  }
+
+  .link {
+      text-decoration: none;
+      color: $color-black;
+
+      &:active {
+      text-decoration: none;
+      color: $color-black;
+      }
+  }
+
+  .title {
+    float: left;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 20px;
+    padding-left: $gutter-padding;
+
+    @include media(tablet, desktop) {
+      font-size: 24px;
+    }
+
+    &--inverse {
+      color: $color-white;
+    }
+  }
+
+  .header-tools {
+    padding-top: 8px;
+    padding-right: $gutter-padding;
+  }
+
+  .header-action {
+    background: $color-white;
+    border-radius: 100%;
+    width:  $icon-size-sm;
+    height:   $icon-size-sm;
+    font-size:   18px;
+    color: $color-black;
+    text-align: center;
+    align-content: center;
+    float: left;
+    margin-right: 1.5rem;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position-y: 8px;
+    background-position-x: 6px;
+    overflow: hidden;
+    text-indent: -99rem;
+    &:last-child {
+      margin-right: 0;
+    }
+
+  
+
+
+    @include media(desktop) {
+      width:  $icon-size-lg;
+      height:   $icon-size-lg;
+      font-size:   26px;
+      background-position-y: 9px;
+      background-position-x: 7px;
+    }
+
+    @include media(tablet) {
+      width:  $icon-size-md;
+      height:   $icon-size-md;
+      font-size:   22px;
+      background-position-y: 8px;
+      background-position-x: 6px;
+    }
+  }
+}

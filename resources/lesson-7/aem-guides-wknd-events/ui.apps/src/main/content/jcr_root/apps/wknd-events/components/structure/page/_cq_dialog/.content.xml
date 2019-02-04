@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <content
+        granite:class="cq-dialog-content-page"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                granite:class="cq-siteadmin-admin-properties-tabs"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                size="L">
+                <items jcr:primaryType="nt:unstructured">
+                    <wkndevents
+                        cq:showOnCreate="{Boolean}true"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="WKND Events"
+                        sling:orderBefore="advanced"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <section
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Event Details"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <eventdate
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                                displayedFormat="MMMM DD, YYYY hh:mm a"
+                                                displayTimezoneMessage="{Boolean}true"
+                                                fieldLabel="Event Date"
+                                                name="./eventDate"
+                                                renderReadOnly="{Boolean}true"
+                                                type="datetime"/>
+                                            <price
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                fieldLabel="Ticket Price"
+                                                name="./eventPrice"
+                                                renderReadOnly="{Boolean}true"
+                                                step="1"/>
+                                            <city
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="City"
+                                                name="./eventCity"
+                                                renderReadOnly="{Boolean}true"/>
+                                            <venue
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Venue"
+                                                name="./eventVenue"
+                                                renderReadOnly="{Boolean}true"/>
+                                            <address
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldLabel="Address"
+                                                name="./eventAddress"
+                                                renderReadOnly="{Boolean}true"/>
+                                            <thumbnailresource
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                                name="./image/sling:resourceType"
+                                                value="wknd-events/components/content/image"/>
+                                        </items>
+                                    </section>
+                                </items>
+                            </column>
+                        </items>
+                    </wkndevents>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

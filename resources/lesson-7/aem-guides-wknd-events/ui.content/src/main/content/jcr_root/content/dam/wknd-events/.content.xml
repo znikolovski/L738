@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="sling:OrderedFolder">
+    <oscar-keys-58399-unsplash.jpg/>
+    <luke-matthews-224969-unsplash.jpg/>
+    <matthew-ronder-seid-424703-unsplash.jpg/>
+    <beasty-356328-unsplash.jpg/>
+    <josh-rose-506979-unsplash.jpg/>
+    <faisal-latif-713461-unsplash.jpg/>
+    <james-donaldson-365418-unsplash.jpg/>
+    <alice-moore-192521-unsplash.jpg/>
+    <connor-wells-534089-unsplash.jpg/>
+    <craig-whitehead-253949-unsplash.jpg/>
+    <syd-sujuaan-539669-unsplash.jpg/>
+    <jcr:content
+        jcr:primaryType="nt:unstructured"
+        jcr:title="WKND Events">
+        <folderThumbnail/>
+    </jcr:content>
+    <lance-asper-152203-unsplash.jpg/>
+    <ablimit-ablet-639666-unsplash.jpg/>
+    <lurm-484763-unsplash.jpg/>
+    <sponsored-dark.jpg/>
+    <sponsored-light.jpg/>
+    <joshua-fuller-368384-unsplash.jpg/>
+</jcr:root>
