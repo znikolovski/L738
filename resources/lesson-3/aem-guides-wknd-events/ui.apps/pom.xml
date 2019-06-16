@@ -23,7 +23,7 @@
     <parent>
         <groupId>com.adobe.aem.guides</groupId>
         <artifactId>aem-guides-wknd-events</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.0.11-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -98,6 +98,13 @@
                     <verbose>true</verbose>
                     <failOnError>true</failOnError>
                     <group>aem-guides/wknd-events</group>
+                    <dependencies>
+                        <dependency>
+                            <group>adobe/cq60</group>
+                            <name>core.wcm.components.all</name>
+                            <version>[2.0.0,2.4.0)</version>
+                        </dependency>
+                    </dependencies>
                     <embeddeds>
                         <embedded>
                             <groupId>com.adobe.aem.guides</groupId>
@@ -105,13 +112,6 @@
                             <target>/apps/wknd-events/install</target>
                         </embedded>
                     </embeddeds>
-                    <subPackages>
-                        <subPackage>
-                            <groupId>com.adobe.cq</groupId>
-                            <artifactId>core.wcm.components.all</artifactId>
-                            <filter>true</filter>
-                        </subPackage>
-                    </subPackages>
                 </configuration>
             </plugin>
 
@@ -129,7 +129,7 @@
         <dependency>
             <groupId>com.adobe.aem.guides</groupId>
             <artifactId>aem-guides-wknd-events.core</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${project.version}</version>
         </dependency>
 
         <dependency>

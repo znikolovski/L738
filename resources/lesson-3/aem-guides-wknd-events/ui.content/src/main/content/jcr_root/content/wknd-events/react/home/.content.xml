@@ -18,6 +18,33 @@
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/foundation/components/responsivegrid">
+                <promo
+                    jcr:created="{Date}2019-01-16T03:14:45.663-08:00"
+                    jcr:createdBy="admin"
+                    jcr:description="&lt;p>Get a Monthly package handcrafted for &lt;b>you&lt;/b>. Secret Shows, Special Discounts, limited access art shows. Discover your city events and venues in a smarter way, relevant to your interests.&lt;/p>&#xd;&#xa;"
+                    jcr:lastModified="{Date}2019-02-01T21:41:25.400-05:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Wknds Free Pass"
+                    sling:resourceType="wknd-events/components/content/promo"
+                    actionsEnabled="true"
+                    descriptionFromPage="false"
+                    fileReference="/content/dam/wknd-events/sponsored-light.jpg"
+                    offerText="$2000 / Month"
+                    textIsRich="true"
+                    titleFromPage="false">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <phone
+                            jcr:primaryType="nt:unstructured"
+                            width="12"/>
+                    </cq:responsive>
+                    <actions jcr:primaryType="nt:unstructured">
+                        <item0
+                            jcr:primaryType="nt:unstructured"
+                            link="/content/wknd-events/react/home/wknd-free-pass"
+                            text="Learn More"/>
+                    </actions>
+                </promo>
                 <eventlist
                     jcr:created="{Date}2019-01-30T12:29:11.847-05:00"
                     jcr:createdBy="admin"
@@ -35,9 +62,6 @@
                     tagsMatch="any"/>
             </responsivegrid>
         </root>
-        <image
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="wknd-events/components/content/image"/>
     </jcr:content>
     <first-article/>
     <events/>

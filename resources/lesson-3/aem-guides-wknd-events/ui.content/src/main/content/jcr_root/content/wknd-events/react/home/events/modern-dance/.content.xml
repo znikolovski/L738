@@ -12,7 +12,7 @@
         eventAddress="621 Madison Square Ave.&#xd;&#xa;New York, NY 20004"
         eventCity="New York"
         eventDate="{Date}2019-05-18T08:30:00.000-04:00"
-        eventPrice="64"
+        eventPrice="{Double}64.0"
         eventVenue="Madison Square Garden">
         <image
             jcr:primaryType="nt:unstructured"

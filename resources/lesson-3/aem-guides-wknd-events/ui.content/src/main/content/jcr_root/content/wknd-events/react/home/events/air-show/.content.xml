@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2019-02-01T21:25:19.557-05:00"
+        cq:lastModified="{Date}2019-02-12T18:24:52.026-05:00"
         cq:lastModifiedBy="admin"
         cq:template="/conf/wknd-events/settings/wcm/templates/wknd-events-page-react"
         jcr:description="Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. "
@@ -12,7 +12,7 @@
         eventAddress="33rd Mockingbird Lane&#xd;&#xa;Paris FR 48-9304"
         eventCity="Paris"
         eventDate="{Date}2019-04-20T00:30:00.000-04:00"
-        eventPrice="8"
+        eventPrice="{Double}99.0"
         eventVenue="Charles De Gaulle Air Field">
         <image
             jcr:primaryType="nt:unstructured"

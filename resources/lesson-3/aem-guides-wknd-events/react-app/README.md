@@ -52,37 +52,12 @@ Your app is ready to be deployed!
 
 ### SSR Setup
 
-0. Modify the page component HTL template [a,b]
-1. Start the local NODE.js server [c]
-2. Request the page from your browser
-3. Using a web browser, navigate to one of the pages of the app
+The React App is already set up to make use of Server Side Rendering. In order to use Server Side Rendering you will need to perform the following steps:
 
-a. Location of the page component HTL body template
-```
-../content/jcr_root/apps/wknd-events/components/structure/page/body.html
-```
+1. Install the entire project from source code, from the root directory: `mvn -PautoInstallPackage clean install`
+2. From the `react-app` directory run the following command:
 
-b. Expected content of the page component HTL body template
-```
-<app-root id="root">
-    <sly data-sly-resource="${resource @ resourceType='cq/remote/content/renderer'}" />
-</app-root>
-```
-
-c. Command to start the local node server
-```
-npm run start:server
-```
-
-d. Configure the AEM Remote HTML Renderer Servlet
-
-0. Navigate to the System OSGi Configuration console (http://localhost:4502/system/console/configMgr)
-1. Look for the configuration named `Remote HTML renderer configuration Factory`
-2. Create a new configuration and set the after-mentioned fields as follow
-
-```
-Content path pattern=/content/wknd-events/react(.*)
-Remote endpoint URL=http://localhost:4200 
-``` 
-
+    ```
+    npm run start:server
+    ```
 

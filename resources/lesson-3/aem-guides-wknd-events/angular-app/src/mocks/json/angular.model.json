@@ -36,6 +36,7 @@
                   ":type": "wknd-events/components/content/text"
                 },
                 "promo": {
+                  "offerText": "$2000 / Month",
                   "actionItems": [
                     {
                       "title": "Learn More",

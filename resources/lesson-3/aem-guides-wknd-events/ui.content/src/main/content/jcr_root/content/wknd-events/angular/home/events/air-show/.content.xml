@@ -12,7 +12,7 @@
         eventAddress="33rd Mockingbird Lane&#xd;&#xa;Paris FR 48-9304"
         eventCity="Paris"
         eventDate="{Date}2019-04-20T00:30:00.000-04:00"
-        eventPrice="8"
+        eventPrice="{Double}8.0"
         eventVenue="Charles De Gaulle Air Field">
         <image
             jcr:primaryType="nt:unstructured"

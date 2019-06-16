@@ -12,7 +12,7 @@
         eventAddress="Trafalgar Square&#xd;&#xa;London WC2N 5DN, UK"
         eventCity="London"
         eventDate="{Date}2019-07-06T12:00:00.000-04:00"
-        eventPrice="99"
+        eventPrice="{Double}99.0"
         eventVenue="The National Gallery">
         <image
             jcr:primaryType="nt:unstructured"

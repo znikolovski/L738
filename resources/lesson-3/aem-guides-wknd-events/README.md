@@ -1,6 +1,6 @@
-# WKND Events SPA Editor Project
+# WKND Events SPA Editor Project - Demo Version (1.10)
 
-This is the code companion for a tutorial that walks through the process of setting up an AEM project to leverage the Single Page App or SPA Editor feature.
+This is a demo version of the finished project built in the [WKND Events Tutorial](https://helpx.adobe.com/experience-manager/kt/sites/using/getting-started-spa-wknd-tutorial-develop.html). It will have more "flashy" elements.
 
 ## Modules
 
@@ -49,6 +49,14 @@ There are three levels of testing contained in the project:
 
     in the browser, open the page in 'Developer mode', open the left panel and switch to the 'Tests' tab and find the generated 'MyName Tests' and run them.
 
+## Releasing
+
+The release of the Demo SPA Editor is manual and the artifacts are not deployed to an artifact repository, thuse we must skip the deploy step.
+
+```
+$ mvn release:prepare
+$ mvn release:perform -Darguments="-Dmaven.deploy.skip=true"
+```
 
 ## Maven settings
 

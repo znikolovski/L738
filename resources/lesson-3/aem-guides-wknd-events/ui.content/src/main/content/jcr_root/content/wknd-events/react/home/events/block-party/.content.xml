@@ -12,7 +12,7 @@
         eventAddress="6 W 25th St&#xd;&#xa;New York, NY 10010"
         eventCity="New York"
         eventDate="{Date}2019-05-03T09:00:00.000-04:00"
-        eventPrice="1"
+        eventPrice="{Double}1.0"
         eventVenue="Central Park">
         <image
             jcr:primaryType="nt:unstructured"

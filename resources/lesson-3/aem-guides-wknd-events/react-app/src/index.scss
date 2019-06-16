@@ -1,9 +1,8 @@
 @import './styles/shared';
 
-// theme/WKND Events
-//Google Font import
 @import url('https://fonts.googleapis.com/css?family=Asar|Source+Sans+Pro:400,600,700');
 
+@import './styles/animate.css';
 
 body {
   font-family: $font-sans;

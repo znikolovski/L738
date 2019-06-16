@@ -114,6 +114,19 @@ $EventDate-boxShadow:  0px 20px 40px rgba(8, 8, 8, 0.25);
     @include media(desktop) {
         margin-bottom: -1 * $EventDate-sizeM / 2;
         float: left;
+        width: $EventDate-sizeM;
+        height: $EventDate-sizeM;
+    
+
+        .EventDate-month {
+            font-size: ($EventDate-sizeM / 5);
+            line-height: ($EventDate-sizeM / 5);
+            }
+
+        .EventDate-day {
+                font-size: ($EventDate-sizeM / 2.7);
+                line-height: ($EventDate-sizeM / 2.7);
+            }
     }
 
 }

@@ -44,6 +44,11 @@
                                                 name="./eventPrice"
                                                 renderReadOnly="{Boolean}true"
                                                 step="1"/>
+                                            <pricetypehint
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                                name="./eventPrice@TypeHint"
+                                                value="Double"/>
                                             <city
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"

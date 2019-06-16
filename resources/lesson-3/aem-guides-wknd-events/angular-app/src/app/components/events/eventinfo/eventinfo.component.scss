@@ -8,7 +8,7 @@
    
     background-color: $color-primary;
     padding-bottom: $gutter-padding;
-    top: $header-height-big + $gutter-padding;
+    top: 0;
     margin-left: 0;
     margin-right: 0;
  
@@ -20,18 +20,15 @@
     }
 
    @include media(desktop) {
-            /*
-            margin-bottom: $EventDate-sizeL / 2;
-            
-            margin-right: - $content-padding;
-            
-            */
+       
             width: 100%;
             margin-left: - $content-padding;
             max-width: $max-width + ($content-padding * 2);
             max-height: $eventinfo-height;
             position: fixed;
             z-index: 99;
+            padding-right: $content-padding *2;
+      
     }
 
 

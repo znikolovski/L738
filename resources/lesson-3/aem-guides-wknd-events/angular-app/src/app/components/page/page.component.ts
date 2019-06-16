@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ModelManager, Constants } from '@adobe/cq-spa-page-model-manager';
+import 'animate.css';
 
 @Component({
   selector: 'app-page',
@@ -49,9 +50,9 @@ export class PageComponent implements OnInit {
 
   get cssClass() {
     if(this.isEventPage) {
-      return "structure-page eventinfo-page";
+      return "page-wrapper animated slideInRight";
     }
-    return "structure-page";
+    return "page-wrapper animated slideInLeft";
   }
 
   ngOnInit() { }

@@ -12,7 +12,7 @@
         eventAddress="1 Rue de la Légion d'Honneur&#xd;&#xa;75007 Paris, France"
         eventCity="Paris"
         eventDate="{Date}2019-04-13T10:32:00.000-04:00"
-        eventPrice="99"
+        eventPrice="{Double}99.0"
         eventVenue="Musée d'Orsay">
         <image
             jcr:primaryType="nt:unstructured"

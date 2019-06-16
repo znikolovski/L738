@@ -12,7 +12,7 @@
         eventAddress="200 Eastern Pkwy&#xd;&#xa;Brooklyn, NY 11238"
         eventCity="New York"
         eventDate="{Date}2019-05-11T04:00:00.000-04:00"
-        eventPrice="45"
+        eventPrice="{Double}45.0"
         eventVenue="The Pyramid Club">
         <image
             jcr:primaryType="nt:unstructured"

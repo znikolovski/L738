@@ -1,0 +1,3 @@
+[submodule "aem-spa-project-archetype"]
+	path = aem-spa-project-archetype
+	url = https://github.com/adobe/aem-spa-project-archetype

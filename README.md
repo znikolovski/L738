@@ -124,6 +124,15 @@ To achieve this integration two tools will be used:
 * [aem-clientlib-generator](https://www.npmjs.com/package/aem-clientlib-generator) - used to transform compiled CSS and JS files into an AEM client library
 * [frontend-maven-plugin](https://github.com/eirslett/frontend-maven-plugin) - used to trigger NPM commands via a Maven build. This plugin will download/install Node and NPM locally for the project, ensuring consistency and making the project easy to integrate with a Continuous Integration/Continuous Deployment environment.
 
+### Pre-work for both React and Angular
+
+As the SPA Project Archetype is not yet available publically we need to make sure that we install it in our local archetype catalog.
+
+1. Open the Terminal application
+2. Navigate to ~/Desktop/aem-spa-project-archetype with ```cd ~/Desktop/aem-spa-project-archetype```
+3. Execute the following command: ```mvn install```
+4. Confirm that the command executes successfully by checking for ```BUILD SUCCCESS``` in the Terminal output
+
 #### ![React](./images/react-logo.png) Exercise 1.1 - Open the L738 SPA React Project
 
 1. The [Maven Archetype for SPA Starter Kit](https://github.com/adobe/aem-spa-project-archetype/tree/master) was used to create a new SPA project with React. The following [parameters](./resources/lesson-1/React-archetype-params.txt) were used:
@@ -133,7 +142,7 @@ To achieve this integration two tools will be used:
         -DarchetypeCatalog=local  \
         -DarchetypeGroupId=com.adobe.cq.spa.archetypes  \
         -DarchetypeArtifactId=aem-spa-project-archetype  \
-        -DarchetypeVersion=1.0.3-SNAPSHOT \
+        -DarchetypeVersion=1.1.1-SNAPSHOT \
         -Dpackage=summitlab \
         -DgroupId=com.adobe.summit \
         -DartifactId=L738-spa-react \
@@ -331,7 +340,7 @@ The goal of the SPA Editor is to allow marketers to be able to make in-context e
 
     ![crxde content tree](./images/lesson-2/crxde-tree.png)
 
-3. Select the first child node prefixed with **text_**. In the properties tab, you can observe the data associated with the text component you created
+3. Select the first child node prefixed with **text_** (or just named **text**). In the properties tab, you can observe the data associated with the text component you created
 
     ![Text component data persistence](./images/lesson-2/text-properties.png)
 
@@ -411,7 +420,7 @@ Observe the JSON data structure to have a better idea of how your component is r
 
 ![react-logo](./images/react-logo.png) React:
 
- * **react-app** > **src** > **components** > **Text** > **Text.js**
+ * **react-app** > **src** > **components** > **Text** > **index.js**
 
 ![angular-logo](./images/angular-logo.png) Angular:
 
@@ -521,7 +530,7 @@ When planning a new component it is important to start with the JSON structure t
     * ![React Logo](./images/react-logo.png) React: **react-app** > **public** > Open the file **mock.model.json**.
     * ![Angular Logo](./images/angular-logo.png) Angular: **angurl-app** > **src** > **mocks** > **json** > **angular.model.json**
 3. Find the JSON for the **Promo** component by searching for the keyword `promo`. The JSON structure for the component has already been partially stubbed-out. Note the internal field `:type` and the value of `wknd-events/components/content/promo`. This is the property that will tie the React component with the JSON properties.
-4. Update the JSON to add a new property with a key of `offerText`:
+4. Update the JSON to add a new property with a key of `offerText` (just above `actionItems`):
 
     ```diff
     "promo": {

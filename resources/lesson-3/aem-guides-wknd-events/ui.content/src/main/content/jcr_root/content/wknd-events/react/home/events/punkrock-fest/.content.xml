@@ -12,7 +12,7 @@
         eventAddress="1179 Nippon Budokan&#xd;&#xa;Chiyoda,, Tokyo 102-8321"
         eventCity="Tokyo"
         eventDate="{Date}2019-06-15T09:00:00.000-04:00"
-        eventPrice="16"
+        eventPrice="{Double}16.0"
         eventVenue="Tokyo Arena">
         <image
             jcr:primaryType="nt:unstructured"

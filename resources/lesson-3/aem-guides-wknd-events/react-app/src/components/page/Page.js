@@ -20,7 +20,7 @@ import './Page.scss';
          attrs.className = (attrs.className || '') + ' WkndPage ' + (this.props.cssClassNames || '');
 
          if(this.decoratedProps) {
-            attrs.className = this.decoratedProps.eventDate ? attrs.className + ' PageEventInfo' : attrs.className;
+            attrs.className = this.decoratedProps.eventDate ? attrs.className + ' PageEventInfo animated slideInRight' : attrs.className + ' animated slideInLeft';
          }
          
          return attrs;

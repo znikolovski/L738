@@ -15,11 +15,29 @@ export class EventInfo extends Component {
 
     get eventTime() {
         if(this.props.eventDate) {
-            let date = new Date(this.props.eventDate);
-            return date.getHours() + ":" + date.getMinutes();
+            let date = new Date(this.props.eventDate),
+            hours = date.getHours(),
+            minutes = date.getMinutes(),
+            ampm = hours >= 12 ? 'pm' : 'am',
+            strTime,
+            strMinutes;
+      
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            strMinutes = minutes < 10 ? '0'+minutes : minutes;
+            strTime = hours + ':' + strMinutes + ' ' + ampm;
+            return strTime;
         }
 
         return "";
+    }
+
+    get eventPrice() {
+        if(this.props.eventPrice) {
+            let price = this.props.eventPrice;
+            return price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
+        }
+        return null;
     }
 
     render() {
@@ -32,7 +50,7 @@ export class EventInfo extends Component {
                 <EventTitle title={this.props['jcr:title']} time={this.props.eventDate} />
                 <div className="EventDetails">
                     <EventDetail key={'city'} label={'City'} value={this.props.eventCity} />
-                    <EventDetail key={'tickets'} label={'Tickets'} value={this.props.eventPrice} />
+                    <EventDetail key={'tickets'} label={'Tickets'} value={this.eventPrice} />
                     <EventDetail key={'time'} label={'Time'} value={this.eventTime} />
                     <EventDetail key={'venue'} label={'Venue'} value={this.props.eventVenue} />
                     <EventDetail key={'address'} label={'Address'} value={this.props.eventAddress} />

@@ -1,4 +1,61 @@
 import { NgModule, Injectable } from '@angular/core';
+import { RouteReuseStrategy, RouterModule, Routes, UrlMatchResult, UrlSegment,Resolve, ActivatedRouteSnapshot } from '@angular/router';
+import { AemPageDataResolver, AemPageRouteReuseStrategy } from "@adobe/cq-angular-editable-components";
+import { PageComponent} from './components/page/page.component';
+
+const CONTENT_ROOT =  'content/wknd-events/angular/';
+const HOME_PAGE =  CONTENT_ROOT + 'home.html';
+
+export function AemPageMatcher(url: UrlSegment[]): UrlMatchResult {
+  if (url.length) {
+    return (
+      {
+        consumed: url,
+        posParams: {
+          path: url[url.length - 1]
+        }
+      }
+    );
+  }
+}
+
+@Injectable()
+export class AemHomePageDataResolver implements Resolve<boolean> {
+  constructor() {}
+
+  resolve(route: ActivatedRouteSnapshot) {
+    return route.url.join('/') === HOME_PAGE;
+  }
+}
+
+const routes: Routes = [
+  {
+    matcher: AemPageMatcher,
+    component: PageComponent,
+    resolve: {
+      path: AemPageDataResolver,
+      home: AemHomePageDataResolver
+    }
+  },
+  {
+    path: '',
+    redirectTo: HOME_PAGE,
+    pathMatch: 'full'
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+  providers: [AemPageDataResolver, AemHomePageDataResolver, {
+    provide: RouteReuseStrategy,
+    useClass: AemPageRouteReuseStrategy
+  }]
+})
+
+export class AppRoutingModule {}
+/*
+import { NgModule, Injectable } from '@angular/core';
 import { Routes, RouterModule, UrlSegment, UrlMatchResult,
          Resolve, ActivatedRouteSnapshot,
          DetachedRouteHandle, RouteReuseStrategy } from '@angular/router';
@@ -72,4 +129,4 @@ const routes: Routes = [
     }
   ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule { }*/
