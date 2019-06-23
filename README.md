@@ -222,7 +222,7 @@ As the SPA Project Archetype is not yet available publically we need to make sur
      -DarchetypeCatalog=local  \
      -DarchetypeGroupId=com.adobe.cq.spa.archetypes  \
      -DarchetypeArtifactId=aem-spa-project-archetype  \
-     -DarchetypeVersion=1.0.3-SNAPSHOT \
+     -DarchetypeVersion=1.1.1-SNAPSHOT \
      -Dpackage=summitlab \
      -DgroupId=com.adobe.summit \
      -DartifactId=L738-spa-angular \
