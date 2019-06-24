@@ -30,8 +30,8 @@ import '../components/MappedComponents';
 
 const exapp = express();
 //Here we are configuring express to use body-parser as middle-ware.
-exapp.use(bodyParser.urlencoded({ extended: false }));
-exapp.use(bodyParser.json());
+exapp.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
+exapp.use(bodyParser.json({ limit: '50mb', extended: true }));
 exapp.use(express.static("dist"));
 
 const APP_ROOT_PATH = process.env.APP_ROOT_PATH;

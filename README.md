@@ -222,7 +222,7 @@ As the SPA Project Archetype is not yet available publically we need to make sur
      -DarchetypeCatalog=local  \
      -DarchetypeGroupId=com.adobe.cq.spa.archetypes  \
      -DarchetypeArtifactId=aem-spa-project-archetype  \
-     -DarchetypeVersion=1.0.3-SNAPSHOT \
+     -DarchetypeVersion=1.1.1-SNAPSHOT \
      -Dpackage=summitlab \
      -DgroupId=com.adobe.summit \
      -DartifactId=L738-spa-angular \
@@ -933,7 +933,7 @@ The lesson provides examples of Server-Side Rendered SPA and exposes the main ad
 
 The _WKND - events_ project only contains a **React** Server-Side environment. To proceed with the current exercise, please start with the provided initial content for chapter 7 located at:
 
-**Desktop** > **resources** > **lesson-7** > **aem-guides-wknd-events-L7**. Complete the final exercise with this code base.
+**Desktop** > **resources** > **lesson-7** > **aem-guides-wknd-events**. Complete the final exercise with this code base.
 
 ### Exercise 7.1 - Include the Server-Side rendering resource
 
@@ -974,7 +974,7 @@ The _WKND - events_ project only contains a **React** Server-Side environment. T
 
 ### Exercise 7.2 - Start the local Node Server
 
-1. Open a terminal window and navigate to **aem-guides-wknd-events** > **react-app** directory.
+1. Open a terminal window and navigate to **Desktop** > **resources** > **lesson-7** > **aem-guides-wknd-events** > **react-app** directory.
 2. Run the following command to start the server:
 
     ```
