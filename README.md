@@ -466,7 +466,7 @@ In this lesson we will install the WKND Events App. This application displays a 
 3. Run the following command in the terminal:
 
     ```
-    $ mvn -PautoInstallPackage clean install
+    $ mvn -PautoInstallPackage -Padobe-public clean install
     ```
     This will build and deploy the application to a local instance of AEM running at [http://localhost:4502](http://localhost:4502).
 
