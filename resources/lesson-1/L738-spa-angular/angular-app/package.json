@@ -34,7 +34,7 @@
     "@nguniversal/express-engine": "^6.0.0",
     "@nguniversal/module-map-ngfactory-loader": "^6.0.0",
     "angular-in-memory-web-api": "^0.6.0",
-    "chart.js": "^2.7.2",
+    "chart.js": "^2.9.4",
     "core-js": "^2.5.4",
     "node-fetch": "^2.2.0",
     "npm": "^6.4.1",
